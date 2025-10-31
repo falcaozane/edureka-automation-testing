@@ -22,6 +22,7 @@ public class BaseSteps {
 		coptions.addArguments("--disable-notifications");
 		
 		driver = new ChromeDriver(coptions);
+		driver.get("https://www.edureka.co");;
 		
 		return driver;
 	}
@@ -34,6 +35,7 @@ public class BaseSteps {
 		foptions.addArguments("--disable-notifications");
 		
 		driver = new FirefoxDriver(foptions);
+		driver.get("https://www.edureka.co");
 		
 		return driver;
 	}
@@ -46,6 +48,7 @@ public class BaseSteps {
 		eoptions.addArguments("--disable-notifications");
 		
 		driver = new EdgeDriver(eoptions);
+		driver.get("https://www.edureka.co");
 		
 		return driver;
 	}

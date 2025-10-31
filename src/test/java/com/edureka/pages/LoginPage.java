@@ -1,13 +1,16 @@
 package com.edureka.pages;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.PageFactory;
+
+import com.edureka.setup.BaseSteps;
 
 public class LoginPage {
 	
 	WebDriver driver;
 	HomePage homePage;
+	BasePage basePage;
+	BaseSteps baseSteps;
 	
 	//WebElements
 	
@@ -18,12 +21,11 @@ public class LoginPage {
 	}
 	 
 	public void logIn() {
-		driver = new EdgeDriver();
-		driver.manage().window().maximize();
-		driver.get("https://www.edureka.co");
 		
+		basePage = new BasePage(driver);
+		basePage.loadURL("https://www.edureka.co");
 		homePage = new HomePage(driver);
-		homePage.logIn();
+		homePage.clicklogIn();
 	}
 
 }

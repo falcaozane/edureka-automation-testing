@@ -3,11 +3,8 @@ package com.edureka.test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
-
-import com.edureka.pages.BasePage;
-import com.edureka.pages.HomePage;
 import com.edureka.pages.LoginPage;
-import com.edureka.setup.BaseSteps;
+
 
 
 public class Test {
@@ -16,6 +13,10 @@ public class Test {
 	
 	@org.testng.annotations.Test
 	public void test01() {
+		driver = new EdgeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.edureka.co");
+		
 		loginPage = new LoginPage(driver);
 		loginPage.logIn();
 	}
