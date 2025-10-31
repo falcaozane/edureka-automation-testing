@@ -5,9 +5,7 @@
     <classes>
       <class name="com.edureka.test.DummyTest">
         <methods>
-          <include name="loadConfig"/>
-          <include name="test01"/>
-          <include name="setup"/>
+          <include name="sampleTest"/>
         </methods>
       </class> <!-- com.edureka.test.DummyTest -->
     </classes>

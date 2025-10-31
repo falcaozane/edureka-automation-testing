@@ -10,7 +10,7 @@ public class PropertyReader {
     static {
         try {
             properties = new Properties();
-            FileInputStream fis = new FileInputStream("src/main/resources/data.properties");
+            FileInputStream fis = new FileInputStream("src/test/resources/PropertyData/data.properties");
             properties.load(fis);
         } catch (IOException e) {
             System.out.println("Failed to load properties file: " + e.getMessage());

@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-10-31T13:24:45 IST" name="Default suite" finished-at="2025-10-31T13:24:49 IST" duration-ms="3816">
+  <suite started-at="2025-11-01T01:33:56 IST" name="Default suite" finished-at="2025-11-01T01:34:45 IST" duration-ms="49213">
     <groups>
     </groups>
-    <test started-at="2025-10-31T13:24:45 IST" name="Default test" finished-at="2025-10-31T13:24:49 IST" duration-ms="3816">
+    <test started-at="2025-11-01T01:33:56 IST" name="Default test" finished-at="2025-11-01T01:34:45 IST" duration-ms="49213">
       <class name="com.edureka.test.DummyTest">
-        <test-method signature="sampleTest()[pri:0, instance:com.edureka.test.DummyTest@235834f2]" started-at="2025-10-31T13:24:45 IST" name="sampleTest" finished-at="2025-10-31T13:24:49 IST" duration-ms="3754" status="PASS">
+        <test-method signature="sampleTest()[pri:0, instance:com.edureka.test.DummyTest@5656be13]" started-at="2025-11-01T01:33:56 IST" name="sampleTest" finished-at="2025-11-01T01:34:45 IST" duration-ms="49163" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- sampleTest -->

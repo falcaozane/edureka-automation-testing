@@ -1,0 +1,24 @@
+# Maven build directory
+/target/
+
+# Eclipse project files
+.classpath
+.project
+.settings/
+bin/
+
+# Maven wrapper files you should keep (optional)
+!/.mvn/wrapper/maven-wrapper.jar
+
+# Logs and temp
+*.log
+*.tmp
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# JAR/WAR/EAR files (ignore built artifacts)
+*.jar
+*.war
+*.ear

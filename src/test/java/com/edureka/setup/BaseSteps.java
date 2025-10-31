@@ -1,5 +1,6 @@
 package com.edureka.setup;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -12,6 +13,7 @@ import com.edureka.parameter.PropertyReader;
 
 public class BaseSteps {
     public static WebDriver driver;
+    JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 
     public static WebDriver initializeDriver() {
         String browser = PropertyReader.getProperty("browser").toLowerCase();
@@ -46,6 +48,20 @@ public class BaseSteps {
         }
 
         return driver;
+    }
+    
+    public static void scrollDownByPixels() {
+		((JavascriptExecutor) driver).executeScript("window.scrollBy(0,1000);");
+	}
+    
+
+    public static void scrollDownByPixels(int pixels) {
+		((JavascriptExecutor) driver).executeScript("window.scrollBy(0," + pixels + ");");
+	}
+    
+    public static void scrollDownToFooter() {
+    	long height = (long) ((JavascriptExecutor) driver).executeScript("return document.body.scrollHeight");
+		((JavascriptExecutor) driver).executeScript("window.scrollTo(0, " + height + ");");
     }
 
     public static void tearDown() {

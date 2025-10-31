@@ -29,4 +29,13 @@ public class BasePage extends BaseSteps {
     public void waitUntilClickable(WebElement element) {
         wait.until(ExpectedConditions.elementToBeClickable(element));
     }
+    
+    public void implicitWait(int seconds) {
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(seconds));
+	}
+    
+    public void explicitWait(int seconds, WebElement element) {
+    	WebDriverWait customWait = new WebDriverWait(driver, Duration.ofSeconds(seconds));
+    	customWait.until(ExpectedConditions.visibilityOf(element));
+    }
 }
