@@ -8,55 +8,49 @@ import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
+import com.edureka.parameter.PropertyReader;
+
 public class BaseSteps {
-	public static WebDriver driver;
-	public static ChromeOptions coptions;
-	public static FirefoxOptions foptions;
-	public static EdgeOptions eoptions;
-	
-	public static WebDriver chromeDriver() {
-		coptions = new ChromeOptions();
-		coptions.addArguments("--start-maximized");
-		coptions.addArguments("--incognito");
-		coptions.addArguments("--disable-popup-blocking");
-		coptions.addArguments("--disable-notifications");
-		
-		driver = new ChromeDriver(coptions);
-		driver.get("https://www.edureka.co");;
-		
-		return driver;
-	}
-	
-	public static WebDriver firefoxDriver() {
-		foptions = new FirefoxOptions();
-		foptions.addArguments("--start-maximized");
-		foptions.addArguments("--private");
-		foptions.addArguments("--disable-popup-blocking");
-		foptions.addArguments("--disable-notifications");
-		
-		driver = new FirefoxDriver(foptions);
-		driver.get("https://www.edureka.co");
-		
-		return driver;
-	}
-	
-	public static WebDriver edgeDriver() {
-		eoptions = new EdgeOptions();
-		eoptions.addArguments("--start-maximized");
-		eoptions.addArguments("--inprivate");
-		eoptions.addArguments("--disable-popup-blocking");
-		eoptions.addArguments("--disable-notifications");
-		
-		driver = new EdgeDriver(eoptions);
-		driver.get("https://www.edureka.co");
-		
-		return driver;
-	}
-	
-	public static void tearDown() {
-		if(driver != null) {
-			driver.quit();
-		}
-	}
-	
+    public static WebDriver driver;
+
+    public static WebDriver initializeDriver() {
+        String browser = PropertyReader.getProperty("browser").toLowerCase();
+
+        switch (browser) {
+            case "chrome":
+                ChromeOptions coptions = new ChromeOptions();
+                coptions.addArguments("--start-maximized", "--incognito", "--disable-popup-blocking", "--disable-notifications");
+                driver = new ChromeDriver(coptions);
+                break;
+
+            case "firefox":
+                FirefoxOptions foptions = new FirefoxOptions();
+                foptions.addArguments("--start-maximized", "--private", "--disable-popup-blocking", "--disable-notifications");
+                driver = new FirefoxDriver(foptions);
+                break;
+
+            case "edge":
+                EdgeOptions eoptions = new EdgeOptions();
+                eoptions.addArguments("--start-maximized", "--inprivate", "--disable-popup-blocking", "--disable-notifications");
+                driver = new EdgeDriver(eoptions);
+                break;
+
+            default:
+                throw new IllegalArgumentException("Unsupported browser specified in properties file: " + browser);
+        }
+
+        try {
+            driver.get(PropertyReader.getProperty("url"));
+        } catch (Exception e) {
+            System.out.println("Unable to navigate to the URL: " + e.getMessage());
+        }
+
+        return driver;
+    }
+
+    public static void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
 }
