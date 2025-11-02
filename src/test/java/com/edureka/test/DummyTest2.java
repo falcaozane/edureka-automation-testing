@@ -3,9 +3,9 @@ package com.edureka.test;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 import com.edureka.pages.BasePage;
+import com.edureka.pages.CareerPage;
 import com.edureka.pages.HomePage;
 import com.edureka.pages.LoginPage;
-import com.edureka.pages.WebinarPage;
 import com.edureka.setup.BaseSteps;
  
 public class DummyTest2 {
@@ -14,7 +14,7 @@ public class DummyTest2 {
     BasePage basePage;
     HomePage hp;
     LoginPage lp;
-    WebinarPage wp;
+    CareerPage cp;
  
     @Test
     public void sampleTest() throws Throwable {
@@ -26,7 +26,7 @@ public class DummyTest2 {
         lp = new LoginPage(driver);
         Thread.sleep(3000);
         lp.logIn();
-        wp = new WebinarPage(driver);
+        cp = new CareerPage(driver);
         
  
         System.out.println("Page title is: " + driver.getTitle());
@@ -42,42 +42,7 @@ public class DummyTest2 {
         hp.clickWebinar();
         
         System.out.println("Page title is: " + driver.getTitle());
-        
-        wp.searchWebinar("agentic ai");
-        Thread.sleep(2000);
-        wp.clearWebinarSearch();
-        Thread.sleep(2000);
-        wp.searchWebinar("cyber security");
-        Thread.sleep(2000);
-        wp.clearWebinarSearch();
-        Thread.sleep(2000);
-        wp.searchWebinar("hwchwvhenov");
-		Thread.sleep(2000);
-		wp.clearWebinarSearch();
-        Thread.sleep(2000);
-		
-		BaseSteps.scrollDownByPixels(500);
-		
-		while (true) {
-			wp.clickRightArrow();
-			Thread.sleep(1000);
-			if (wp.isRightArrowVisible() == false) {
-				break;
-			}
-		}
-		
-		Thread.sleep(2000);
-		
-		wp.registerForWebinar();
-		
-		Thread.sleep(3000);
-		
-		wp.selectExperience("Student");
-		Thread.sleep(2000);
-		wp.clickGetInTouchCheckbox();
-		Thread.sleep(2000);
-		
-//		wp.submitWebinarRegistration();
+
  
 //        BaseSteps.tearDown();
     }
