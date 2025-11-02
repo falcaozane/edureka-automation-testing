@@ -68,6 +68,14 @@ public class WebinarPage {
 	})
 	List<WebElement> getInTouchCheckboxes;
 	
+	@FindAll({
+	    @FindBy(xpath = "//button[contains(text(), 'Submit')]"),
+	    @FindBy(className = "submitbtn"),
+	    @FindBy(css = "button.submitbtn"),
+	    @FindBy(css = "button[type='submit']"),
+	    @FindBy(tagName = "button") // Generic, use with filtering logic
+	}) List<WebElement> submitButtons;
+	
 	//Constructor
 	public WebinarPage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
@@ -165,5 +173,20 @@ public class WebinarPage {
 	        }
 	    }
 	}
+	
+	// register for webinar
+	public void submitWebinarRegistration() {
+		for (Object element : submitButtons) {
+	        WebElement button = (WebElement) element;
+	        String classAttr = button.getAttribute("class");
+	        String text = button.getText();
+	        if (classAttr != null && classAttr.contains("submitbtn") && text.equals("Submit")) {
+	            button.click();
+	            break;
+	        }
+	    }
+	}
+	
+	
 	
 }

@@ -8,7 +8,7 @@ import com.edureka.pages.LoginPage;
 import com.edureka.pages.WebinarPage;
 import com.edureka.setup.BaseSteps;
  
-public class DummyTest {
+public class DummyTest2 {
  
     WebDriver driver;
     BasePage basePage;
