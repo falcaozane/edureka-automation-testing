@@ -39,10 +39,21 @@ public class DummyTest2 {
 			}
 		}
         
-        hp.clickWebinar();
+        hp.clickCareers();
         
-        System.out.println("Page title is: " + driver.getTitle());
-
+        hp.getPageTitle();
+        
+        cp.navigateToJobOpenings();
+        
+        cp.openJobListing();
+        
+        cp.getCurrentUrl();
+        
+        cp.handleMultipleWindows(driver);
+        
+        cp.applyForJob("Zane Falcao", "falcaozane@gmail.com", "+91 9028921961");
+        
+        cp.getPageTitle();
  
 //        BaseSteps.tearDown();
     }

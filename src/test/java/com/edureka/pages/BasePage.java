@@ -14,6 +14,7 @@ import com.edureka.utils.Screenshots;
 public class BasePage extends BaseSteps {
     protected WebDriver driver;
     protected WebDriverWait wait;
+    protected JavascriptExecutor js;
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
@@ -34,7 +35,11 @@ public class BasePage extends BaseSteps {
     }
     
     public void clickElement(WebElement element) {
-        waitUntilClickable(element).click();
+        try {
+			waitUntilClickable(element).click();
+		} catch (Exception e) {
+			js.executeScript("arguments[0].click();", element);
+		}
     }
     
     public void implicitWait(int seconds) {

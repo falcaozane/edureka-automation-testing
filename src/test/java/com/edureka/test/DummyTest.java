@@ -39,7 +39,7 @@ public class DummyTest {
 			}
 		}
         
-        hp.clickWebinar();
+        hp.clickWebinars();
         
         System.out.println("Page title is: " + driver.getTitle());
         
