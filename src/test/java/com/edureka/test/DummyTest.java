@@ -1,6 +1,7 @@
 package com.edureka.test;
  
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import com.edureka.pages.BasePage;
 import com.edureka.pages.HomePage;
@@ -15,10 +16,14 @@ public class DummyTest {
     HomePage hp;
     LoginPage lp;
     WebinarPage wp;
+    
+    @BeforeClass
+    public void setupTest() {
+    	driver = BaseSteps.initializeDriver(); // Reads browser from properties
+    }
  
     @Test
     public void sampleTest() throws Throwable {
-        driver = BaseSteps.initializeDriver(); // Reads browser from properties
         basePage = new BasePage(driver);
         hp = new HomePage(driver);
         Thread.sleep(3000);
@@ -44,7 +49,7 @@ public class DummyTest {
         System.out.println("Page title is: " + driver.getTitle());
         
         wp.searchWebinar("agentic ai");
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         wp.clearWebinarSearch();
         Thread.sleep(2000);
         wp.searchWebinar("cyber security");

@@ -16,7 +16,7 @@ import java.util.Date;
  */
 public class Screenshots {
     
-    private static final String SCREENSHOT_DIR = "Target/Screenshots/";
+    private static final String SCREENSHOT_DIR = "target/Screenshots/";
     
     /**
      * Capture screenshot with timestamp

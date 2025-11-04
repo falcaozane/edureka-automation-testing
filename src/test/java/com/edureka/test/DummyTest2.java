@@ -1,24 +1,33 @@
 package com.edureka.test;
  
+
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
 import com.edureka.pages.BasePage;
 import com.edureka.pages.CareerPage;
 import com.edureka.pages.HomePage;
 import com.edureka.pages.LoginPage;
 import com.edureka.setup.BaseSteps;
+import com.edureka.utils.ReportManager;
  
-public class DummyTest2 {
+public class DummyTest2 extends ReportManager {
  
     WebDriver driver;
     BasePage basePage;
     HomePage hp;
     LoginPage lp;
     CareerPage cp;
+    
+    @BeforeClass
+    public void setupTest() {
+    	driver = BaseSteps.initializeDriver(); // Reads browser from properties
+    }
  
     @Test
     public void sampleTest() throws Throwable {
-        driver = BaseSteps.initializeDriver(); // Reads browser from properties
+        
         basePage = new BasePage(driver);
         hp = new HomePage(driver);
         Thread.sleep(3000);
@@ -34,7 +43,7 @@ public class DummyTest2 {
         while (true) {
 			BaseSteps.scrollDownByPixels();
 			Thread.sleep(2000);
-			if (hp.isWebinarDisplayed()) {
+			if (hp.isCareerDisplayed()) {
 				break;
 			}
 		}
@@ -51,9 +60,9 @@ public class DummyTest2 {
         
         cp.handleMultipleWindows(driver);
         
-        cp.applyForJob("Zane Falcao", "falcaozane@gmail.com", "+91 9028921961");
+        cp.applyForJob("Zane Falcao", "falcaozane@gmail.com", "9028921961");
         
-        cp.getPageTitle();
+        cp.uploadResumeAndSubmit();
  
 //        BaseSteps.tearDown();
     }

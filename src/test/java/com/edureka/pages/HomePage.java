@@ -49,10 +49,13 @@ public class HomePage extends BasePage {
     // CAREERS LINK - Multiple Locator Strategies
     // ==========================================
     @FindAll({
+    	@FindBy(xpath = "//a[@href='/careers/']"),
+    	@FindBy(xpath = "//a[text()='Careers']"),
         @FindBy(xpath = "//ul[@class='courselist_list__LeKn6']/li/a[contains(text(), 'Careers')]"),
         @FindBy(linkText = "Careers"),
-        @FindBy(partialLinkText = "Career"),
-        @FindBy(css = "ul.courselist_list__LeKn6 li a[href*='career']")
+        @FindBy(partialLinkText = "Careers"),
+        @FindBy(css = "ul.courselist_list__LeKn6 li a[href*='career']"),
+        
     })
     WebElement careersLink;
     

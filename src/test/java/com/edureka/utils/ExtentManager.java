@@ -19,7 +19,7 @@ public class ExtentManager {
     
     private static ExtentReports extent;
     private static ExtentSparkReporter sparkReporter;
-    private static final String REPORT_DIR = "Target/ExtentReport/";
+    private static final String REPORT_DIR = "target/ExtentReport/";
     private static final String REPORT_NAME = "Report.html";
     
     public static String Browser = PropertyReader.getProperty("browser");

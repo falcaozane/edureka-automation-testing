@@ -12,7 +12,7 @@
           <include name="testWebinarSearchAndRegistration" invocation-numbers="0 1 2 3 4 5"/>
           <include name="teardownClass"/>
           <include name="setupClass"/>
-          <include name="testWebinarSearchValidation" invocation-numbers="0 1 2 3 4 5"/>
+          <include name="testWebinarSearchValidation" invocation-numbers="4 5"/>
         </methods>
       </class> <!-- com.edureka.test.WebinarDataDrivenTest -->
     </classes>
@@ -23,7 +23,7 @@
         <methods>
           <include name="teardownClass"/>
           <include name="testSearchInputValidation" invocation-numbers="0 1 2 3 4 5"/>
-          <include name="testMultipleSearches" invocation-numbers="5"/>
+          <include name="testMultipleSearches" invocation-numbers="4 5"/>
           <include name="setupClass"/>
         </methods>
       </class> <!-- com.edureka.test.SearchDataDrivenTest -->

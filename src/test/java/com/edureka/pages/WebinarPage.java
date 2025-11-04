@@ -37,10 +37,10 @@ public class WebinarPage {
 	    @FindBy(className = "register_webinar_upcoming"), // First class
 	    @FindBy(className = "register_webinar_btn"),       // Second class
 	    @FindBy(className = "registerbtn"),                // Third class
-	    @FindBy(className = "register-for-webinar_5_7457"),// Fourth class
-	    @FindBy(xpath = "//button[contains(@class, 'register-for-webinar_5_7457') and text()='Register Now']"),
+	    @FindBy(className = "register-for-webinar_5_7459"),// Fourth class
+	    @FindBy(xpath = "//button[contains(@class, 'register-for-webinar_5_7459') and text()='Register Now']"),
 	    @FindBy(css = "button.register_webinar_upcoming.register_webinar_btn.registerbtn.register-for-webinar_5_7457"),
-	    @FindBy(css = "button[data-webinar-id='7457']"),
+	    @FindBy(css = "button[data-webinar-id='7459']"),
 	    @FindBy(css = "button[data-category-name='Machine Learning']"),
 	    @FindBy(css = "button[tabindex='0']"),
 	    @FindBy(tagName = "button") // Generic, use with filtering logic
@@ -57,14 +57,14 @@ public class WebinarPage {
 	List<WebElement> experienceDropdowns;
 	
 	@FindAll({
-	    @FindBy(id = "getintouch_5_7457"),
+	    @FindBy(id = "getintouch_5_7459"),
 	    @FindBy(className = "getintouch_form"),
-	    @FindBy(css = "input#getintouch_5_7457"),
+	    @FindBy(css = "input#getintouch_5_7459"),
 	    @FindBy(css = "input.getintouch_form"),
 	    @FindBy(css = "input[type='checkbox'][value='getintouch']"),
 	    @FindBy(css = "input[data-gi-label='default']"),
 	    @FindBy(tagName = "input"), // Generic, use with filtering logic
-	    @FindBy(xpath = "//input[@type='checkbox' and @id='getintouch_5_7457']")
+	    @FindBy(xpath = "//input[@type='checkbox' and @id='getintouch_5_7459']")
 	})
 	List<WebElement> getInTouchCheckboxes;
 	
@@ -142,7 +142,7 @@ public class WebinarPage {
 	        if (classAttr != null && classAttr.contains("register_webinar_upcoming") &&
 	            classAttr.contains("register_webinar_btn") &&
 	            classAttr.contains("registerbtn") &&
-	            classAttr.contains("register-for-webinar_5_7457")) {
+	            classAttr.contains("register-for-webinar_5_7459")) {
 	            button.click();
 	            break;
 	        }
@@ -165,7 +165,7 @@ public class WebinarPage {
 	public void clickGetInTouchCheckbox() {
 	    for (WebElement checkbox : getInTouchCheckboxes) {
 	        String idAttr = checkbox.getAttribute("id");
-	        if (idAttr != null && idAttr.equals("getintouch_5_7457")) {
+	        if (idAttr != null && idAttr.equals("getintouch_5_7459")) {
 	            if (!checkbox.isSelected()) {
 	                ((JavascriptExecutor) driver).executeScript("arguments[0].click();", checkbox);
 	            }

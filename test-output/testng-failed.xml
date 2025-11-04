@@ -1,32 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Edureka Data-Driven Test Suite]">
-  <parameter name="browser" value="chrome"/>
-  <listeners>
-    <listener class-name="com.edureka.utils.ExtentTestNGListener"/>
-  </listeners>
-  <test thread-count="5" name="Webinar Data-Driven Tests(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.edureka.test.WebinarDataDrivenTest">
+      <class name="com.edureka.test.DummyTest">
         <methods>
-          <include name="testWebinarSearchAndRegistration" invocation-numbers="0 1 2 3 4 5"/>
-          <include name="teardownClass"/>
-          <include name="setupClass"/>
-          <include name="testWebinarSearchValidation" invocation-numbers="0 1 2 3 4 5"/>
+          <include name="sampleTest"/>
+          <include name="setupTest"/>
         </methods>
-      </class> <!-- com.edureka.test.WebinarDataDrivenTest -->
+      </class> <!-- com.edureka.test.DummyTest -->
     </classes>
-  </test> <!-- Webinar Data-Driven Tests(failed) -->
-  <test thread-count="5" name="Search Data-Driven Tests(failed)">
-    <classes>
-      <class name="com.edureka.test.SearchDataDrivenTest">
-        <methods>
-          <include name="teardownClass"/>
-          <include name="testSearchInputValidation" invocation-numbers="0 1 2 3 4 5"/>
-          <include name="testMultipleSearches" invocation-numbers="5"/>
-          <include name="setupClass"/>
-        </methods>
-      </class> <!-- com.edureka.test.SearchDataDrivenTest -->
-    </classes>
-  </test> <!-- Search Data-Driven Tests(failed) -->
-</suite> <!-- Failed suite [Edureka Data-Driven Test Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
