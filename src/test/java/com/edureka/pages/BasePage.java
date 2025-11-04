@@ -8,8 +8,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import com.edureka.setup.BaseSteps;
-import com.edureka.utils.Screenshots;
+import com.edureka.utils.ScreenShotTest;
+
 
 public class BasePage extends BaseSteps {
     protected WebDriver driver;
@@ -52,7 +54,7 @@ public class BasePage extends BaseSteps {
     }
     
     public void takeScreenshot(String screenshotName) {
-        Screenshots.captureScreenshot(driver, screenshotName);
+        ScreenShotTest.capture(driver, screenshotName);
     }
     
     public void scrollToBottom() {

@@ -8,8 +8,9 @@ import com.edureka.pages.HomePage;
 import com.edureka.pages.LoginPage;
 import com.edureka.pages.WebinarPage;
 import com.edureka.setup.BaseSteps;
+import com.edureka.utils.ReportManager;
  
-public class DummyTest {
+public class DummyTest extends ReportManager{
  
     WebDriver driver;
     BasePage basePage;
