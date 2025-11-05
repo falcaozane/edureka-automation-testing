@@ -1,90 +1,55 @@
 package com.edureka.test;
- 
+
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-import com.edureka.pages.BasePage;
-import com.edureka.pages.HomePage;
-import com.edureka.pages.LoginPage;
-import com.edureka.pages.WebinarPage;
+import com.edureka.pages.*;
 import com.edureka.setup.BaseSteps;
 import com.edureka.utils.ReportManager;
- 
-public class DummyTest extends ReportManager{
- 
+import com.edureka.dataprovider.TestDataProvider;
+
+public class DummyTest extends ReportManager {
+
     WebDriver driver;
     BasePage basePage;
     HomePage hp;
     LoginPage lp;
     WebinarPage wp;
-    
+
     @BeforeClass
     public void setupTest() {
-    	driver = BaseSteps.initializeDriver(); // Reads browser from properties
+        driver = BaseSteps.initializeDriver();
     }
- 
+
     @Test
-    public void sampleTest() throws Throwable {
+    public void loginAndNavigateToWebinars() throws Throwable {
         basePage = new BasePage(driver);
         hp = new HomePage(driver);
         Thread.sleep(3000);
         hp.clicklogIn();
+
         lp = new LoginPage(driver);
         Thread.sleep(3000);
-        lp.logIn();
+        lp.logIn(); // still using data.properties
+
         wp = new WebinarPage(driver);
-        
- 
         System.out.println("Page title is: " + driver.getTitle());
-        
+
         while (true) {
-			BaseSteps.scrollDownByPixels();
-			Thread.sleep(2000);
-			if (hp.isWebinarDisplayed()) {
-				break;
-			}
-		}
-        
+            BaseSteps.scrollDownByPixels();
+            Thread.sleep(2000);
+            if (hp.isWebinarDisplayed()) break;
+        }
+
         hp.clickWebinars();
-        
         System.out.println("Page title is: " + driver.getTitle());
-        
-        wp.searchWebinar("agentic ai");
+    }
+
+    @Test(dataProvider = "webinarSearchTerms", dataProviderClass = TestDataProvider.class, dependsOnMethods = "loginAndNavigateToWebinars")
+    public void searchWebinarTest(String searchTerm) throws InterruptedException {
+        wp.searchWebinar(searchTerm);
         Thread.sleep(3000);
         wp.clearWebinarSearch();
-        Thread.sleep(2000);
-        wp.searchWebinar("cyber security");
-        Thread.sleep(2000);
-        wp.clearWebinarSearch();
-        Thread.sleep(2000);
-        wp.searchWebinar("hwchwvhenov");
-		Thread.sleep(2000);
-		wp.clearWebinarSearch();
-        Thread.sleep(2000);
-		
-		BaseSteps.scrollDownByPixels(500);
-		
-		while (true) {
-			wp.clickRightArrow();
-			Thread.sleep(1000);
-			if (wp.isRightArrowVisible() == false) {
-				break;
-			}
-		}
-		
-		Thread.sleep(2000);
-		
-		wp.registerForWebinar();
-		
-		Thread.sleep(3000);
-		
-		wp.selectExperience("Student");
-		Thread.sleep(2000);
-		wp.clickGetInTouchCheckbox();
-		Thread.sleep(2000);
-		
-//		wp.submitWebinarRegistration();
- 
-//        BaseSteps.tearDown();
+        Thread.sleep(1000);
     }
 }

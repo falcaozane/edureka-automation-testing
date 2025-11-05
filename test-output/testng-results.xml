@@ -1,47 +1,212 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-04T21:56:12 IST" name="Default suite" finished-at="2025-11-04T21:57:05 IST" duration-ms="53368">
+  <suite started-at="2025-11-05T15:17:43 IST" name="Default suite" finished-at="2025-11-05T15:18:35 IST" duration-ms="52438">
     <groups>
     </groups>
-    <test started-at="2025-11-04T21:56:12 IST" name="Default test" finished-at="2025-11-04T21:57:05 IST" duration-ms="53368">
+    <test started-at="2025-11-05T15:17:43 IST" name="Default test" finished-at="2025-11-05T15:18:35 IST" duration-ms="52438">
       <class name="com.edureka.test.DummyTest">
-        <test-method is-config="true" signature="reportGeneration()[pri:0, instance:com.edureka.test.DummyTest@302552ec]" started-at="2025-11-04T21:56:11 IST" name="reportGeneration" finished-at="2025-11-04T21:56:12 IST" duration-ms="433" status="PASS">
+        <test-method is-config="true" signature="reportGeneration()[pri:0, instance:com.edureka.test.DummyTest@2cd76f31]" started-at="2025-11-05T15:17:42 IST" name="reportGeneration" finished-at="2025-11-05T15:17:43 IST" duration-ms="470" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportGeneration -->
-        <test-method is-config="true" signature="setupTest()[pri:0, instance:com.edureka.test.DummyTest@302552ec]" started-at="2025-11-04T21:56:12 IST" name="setupTest" finished-at="2025-11-04T21:56:16 IST" duration-ms="4532" status="PASS">
+        <test-method is-config="true" signature="setupTest()[pri:0, instance:com.edureka.test.DummyTest@2cd76f31]" started-at="2025-11-05T15:17:43 IST" name="setupTest" finished-at="2025-11-05T15:17:51 IST" duration-ms="8539" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupTest -->
-        <test-method is-config="true" signature="reportTestCreation(java.lang.reflect.Method)[pri:0, instance:com.edureka.test.DummyTest@302552ec]" started-at="2025-11-04T21:56:16 IST" name="reportTestCreation" finished-at="2025-11-04T21:56:16 IST" duration-ms="14" status="PASS">
+        <test-method is-config="true" signature="reportTestCreation(java.lang.reflect.Method)[pri:0, instance:com.edureka.test.DummyTest@2cd76f31]" started-at="2025-11-05T15:17:52 IST" name="reportTestCreation" finished-at="2025-11-05T15:17:52 IST" duration-ms="16" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[public void com.edureka.test.DummyTest.sampleTest() throws java.lang.Throwable]]>
+                <![CDATA[public void com.edureka.test.DummyTest.loginAndNavigateToWebinars() throws java.lang.Throwable]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportTestCreation -->
-        <test-method signature="sampleTest()[pri:0, instance:com.edureka.test.DummyTest@302552ec]" started-at="2025-11-04T21:56:16 IST" name="sampleTest" finished-at="2025-11-04T21:57:05 IST" duration-ms="48502" status="PASS">
+        <test-method signature="loginAndNavigateToWebinars()[pri:0, instance:com.edureka.test.DummyTest@2cd76f31]" started-at="2025-11-05T15:17:52 IST" name="loginAndNavigateToWebinars" finished-at="2025-11-05T15:18:13 IST" duration-ms="21348" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- sampleTest -->
-        <test-method is-config="true" signature="reportTestCompletion(org.testng.ITestResult)[pri:0, instance:com.edureka.test.DummyTest@302552ec]" started-at="2025-11-04T21:57:05 IST" name="reportTestCompletion" finished-at="2025-11-04T21:57:05 IST" duration-ms="277" status="PASS">
+        </test-method> <!-- loginAndNavigateToWebinars -->
+        <test-method is-config="true" signature="reportTestCompletion(org.testng.ITestResult)[pri:0, instance:com.edureka.test.DummyTest@2cd76f31]" started-at="2025-11-05T15:18:13 IST" name="reportTestCompletion" finished-at="2025-11-05T15:18:13 IST" duration-ms="437" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=sampleTest status=SUCCESS method=DummyTest.sampleTest()[pri:0, instance:com.edureka.test.DummyTest@302552ec] output={null}]]]>
+                <![CDATA[[TestResult name=loginAndNavigateToWebinars status=SUCCESS method=DummyTest.loginAndNavigateToWebinars()[pri:0, instance:com.edureka.test.DummyTest@2cd76f31] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportTestCompletion -->
-        <test-method is-config="true" signature="reportCompletion()[pri:0, instance:com.edureka.test.DummyTest@302552ec]" started-at="2025-11-04T21:57:05 IST" name="reportCompletion" finished-at="2025-11-04T21:57:06 IST" duration-ms="617" status="PASS">
+        <test-method is-config="true" signature="reportTestCreation(java.lang.reflect.Method)[pri:0, instance:com.edureka.test.DummyTest@2cd76f31]" started-at="2025-11-05T15:18:15 IST" name="reportTestCreation" finished-at="2025-11-05T15:18:15 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.edureka.test.DummyTest.searchWebinarTest(java.lang.String) throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reportTestCreation -->
+        <test-method signature="searchWebinarTest(java.lang.String)[pri:0, instance:com.edureka.test.DummyTest@2cd76f31]" started-at="2025-11-05T15:18:15 IST" name="searchWebinarTest" data-provider="webinarSearchTerms" finished-at="2025-11-05T15:18:20 IST" depends-on-methods="com.edureka.test.DummyTest.loginAndNavigateToWebinars" duration-ms="5558" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[agentic ai]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchWebinarTest -->
+        <test-method is-config="true" signature="reportTestCompletion(org.testng.ITestResult)[pri:0, instance:com.edureka.test.DummyTest@2cd76f31]" started-at="2025-11-05T15:18:20 IST" name="reportTestCompletion" finished-at="2025-11-05T15:18:21 IST" duration-ms="440" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=searchWebinarTest status=SUCCESS method=DummyTest.searchWebinarTest(java.lang.String)[pri:0, instance:com.edureka.test.DummyTest@2cd76f31] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reportTestCompletion -->
+        <test-method is-config="true" signature="reportTestCreation(java.lang.reflect.Method)[pri:0, instance:com.edureka.test.DummyTest@2cd76f31]" started-at="2025-11-05T15:18:21 IST" name="reportTestCreation" finished-at="2025-11-05T15:18:21 IST" duration-ms="4" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.edureka.test.DummyTest.searchWebinarTest(java.lang.String) throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reportTestCreation -->
+        <test-method signature="searchWebinarTest(java.lang.String)[pri:0, instance:com.edureka.test.DummyTest@2cd76f31]" started-at="2025-11-05T15:18:21 IST" name="searchWebinarTest" data-provider="webinarSearchTerms" finished-at="2025-11-05T15:18:24 IST" depends-on-methods="com.edureka.test.DummyTest.loginAndNavigateToWebinars" duration-ms="3350" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[azure]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchWebinarTest -->
+        <test-method is-config="true" signature="reportTestCompletion(org.testng.ITestResult)[pri:0, instance:com.edureka.test.DummyTest@2cd76f31]" started-at="2025-11-05T15:18:24 IST" name="reportTestCompletion" finished-at="2025-11-05T15:18:24 IST" duration-ms="337" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=searchWebinarTest status=SUCCESS method=DummyTest.searchWebinarTest(java.lang.String)[pri:0, instance:com.edureka.test.DummyTest@2cd76f31] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reportTestCompletion -->
+        <test-method signature="searchWebinarTest(java.lang.String)[pri:0, instance:com.edureka.test.DummyTest@2cd76f31]" started-at="2025-11-05T15:18:24 IST" name="searchWebinarTest" data-provider="webinarSearchTerms" finished-at="2025-11-05T15:18:28 IST" depends-on-methods="com.edureka.test.DummyTest.loginAndNavigateToWebinars" duration-ms="3312" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[aws]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchWebinarTest -->
+        <test-method is-config="true" signature="reportTestCreation(java.lang.reflect.Method)[pri:0, instance:com.edureka.test.DummyTest@2cd76f31]" started-at="2025-11-05T15:18:24 IST" name="reportTestCreation" finished-at="2025-11-05T15:18:24 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.edureka.test.DummyTest.searchWebinarTest(java.lang.String) throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reportTestCreation -->
+        <test-method is-config="true" signature="reportTestCompletion(org.testng.ITestResult)[pri:0, instance:com.edureka.test.DummyTest@2cd76f31]" started-at="2025-11-05T15:18:28 IST" name="reportTestCompletion" finished-at="2025-11-05T15:18:28 IST" duration-ms="358" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=searchWebinarTest status=SUCCESS method=DummyTest.searchWebinarTest(java.lang.String)[pri:0, instance:com.edureka.test.DummyTest@2cd76f31] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reportTestCompletion -->
+        <test-method signature="searchWebinarTest(java.lang.String)[pri:0, instance:com.edureka.test.DummyTest@2cd76f31]" started-at="2025-11-05T15:18:28 IST" name="searchWebinarTest" data-provider="webinarSearchTerms" finished-at="2025-11-05T15:18:31 IST" depends-on-methods="com.edureka.test.DummyTest.loginAndNavigateToWebinars" duration-ms="3389" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[cyber security]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchWebinarTest -->
+        <test-method is-config="true" signature="reportTestCreation(java.lang.reflect.Method)[pri:0, instance:com.edureka.test.DummyTest@2cd76f31]" started-at="2025-11-05T15:18:28 IST" name="reportTestCreation" finished-at="2025-11-05T15:18:28 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.edureka.test.DummyTest.searchWebinarTest(java.lang.String) throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reportTestCreation -->
+        <test-method is-config="true" signature="reportTestCompletion(org.testng.ITestResult)[pri:0, instance:com.edureka.test.DummyTest@2cd76f31]" started-at="2025-11-05T15:18:31 IST" name="reportTestCompletion" finished-at="2025-11-05T15:18:32 IST" duration-ms="354" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=searchWebinarTest status=SUCCESS method=DummyTest.searchWebinarTest(java.lang.String)[pri:0, instance:com.edureka.test.DummyTest@2cd76f31] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reportTestCompletion -->
+        <test-method is-config="true" signature="reportTestCreation(java.lang.reflect.Method)[pri:0, instance:com.edureka.test.DummyTest@2cd76f31]" started-at="2025-11-05T15:18:32 IST" name="reportTestCreation" finished-at="2025-11-05T15:18:32 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void com.edureka.test.DummyTest.searchWebinarTest(java.lang.String) throws java.lang.InterruptedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reportTestCreation -->
+        <test-method signature="searchWebinarTest(java.lang.String)[pri:0, instance:com.edureka.test.DummyTest@2cd76f31]" started-at="2025-11-05T15:18:32 IST" name="searchWebinarTest" data-provider="webinarSearchTerms" finished-at="2025-11-05T15:18:35 IST" depends-on-methods="com.edureka.test.DummyTest.loginAndNavigateToWebinars" duration-ms="3385" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[hwchwvhenov]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchWebinarTest -->
+        <test-method is-config="true" signature="reportTestCompletion(org.testng.ITestResult)[pri:0, instance:com.edureka.test.DummyTest@2cd76f31]" started-at="2025-11-05T15:18:35 IST" name="reportTestCompletion" finished-at="2025-11-05T15:18:35 IST" duration-ms="338" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=searchWebinarTest status=SUCCESS method=DummyTest.searchWebinarTest(java.lang.String)[pri:0, instance:com.edureka.test.DummyTest@2cd76f31] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reportTestCompletion -->
+        <test-method is-config="true" signature="reportCompletion()[pri:0, instance:com.edureka.test.DummyTest@2cd76f31]" started-at="2025-11-05T15:18:35 IST" name="reportCompletion" finished-at="2025-11-05T15:18:36 IST" duration-ms="506" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportCompletion -->

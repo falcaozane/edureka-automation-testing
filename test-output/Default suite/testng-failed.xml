@@ -5,8 +5,13 @@
     <classes>
       <class name="com.edureka.test.DummyTest">
         <methods>
-          <include name="sampleTest"/>
+          <include name="reportGeneration"/>
+          <include name="reportTestCompletion"/>
+          <include name="reportTestCreation"/>
+          <include name="loginAndNavigateToWebinars"/>
+          <include name="reportCompletion"/>
           <include name="setupTest"/>
+          <include name="searchWebinarTest"/>
         </methods>
       </class> <!-- com.edureka.test.DummyTest -->
     </classes>

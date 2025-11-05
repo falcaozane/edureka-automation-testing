@@ -81,54 +81,6 @@ public class ExcelReader {
         return data;
     }
     
-    /**
-     * Get test data with custom file path
-     */
-    public static Object[][] getTestData(String filePath, String sheetName) {
-        Object[][] data = null;
-        Workbook workbook = null;
-        
-        try {
-            FileInputStream file = new FileInputStream(new File(filePath));
-            workbook = new XSSFWorkbook(file);
-            Sheet sheet = workbook.getSheet(sheetName);
-            
-            if (sheet == null) {
-                System.err.println("✗ Sheet '" + sheetName + "' not found");
-                return new Object[0][0];
-            }
-            
-            int totalRows = sheet.getLastRowNum();
-            Row headerRow = sheet.getRow(0);
-            int totalCols = headerRow.getLastCellNum();
-            
-            data = new Object[totalRows][totalCols];
-            
-            for (int i = 1; i <= totalRows; i++) {
-                Row row = sheet.getRow(i);
-                if (row != null) {
-                    for (int j = 0; j < totalCols; j++) {
-                        Cell cell = row.getCell(j);
-                        data[i-1][j] = getCellValue(cell);
-                    }
-                }
-            }
-            
-            file.close();
-            System.out.println("✓ Data loaded: " + sheetName + " (" + totalRows + " rows)");
-            
-        } catch (IOException e) {
-            System.err.println("✗ Error reading file: " + e.getMessage());
-        } finally {
-            try {
-                if (workbook != null) workbook.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        
-        return data;
-    }
     
     /**
      * Get cell value as String regardless of cell type
