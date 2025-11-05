@@ -63,10 +63,10 @@ public class DummyTest2 extends ReportManager {
 		// Fill job application form
 		cp.applyForJob("Zane Falcao", "falcaozane@gmail.com", "9028921961");
 		
-		cp.clickBrowseBtn();
+		//cp.clickBrowseBtn();
 		
 		// Upload resume and submit (using Robot class)
-		//cp.uploadResumeAndSubmit();
+		cp.uploadResumeAndSubmit();
 
 		System.out.println("Test completed successfully!");
 

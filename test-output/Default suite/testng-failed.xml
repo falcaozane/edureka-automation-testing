@@ -3,17 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.edureka.test.DummyTest">
+      <class name="com.edureka.test.DummyTest2">
         <methods>
+          <include name="careerJobApplicationTest"/>
           <include name="reportGeneration"/>
+          <include name="setupTest"/>
           <include name="reportTestCompletion"/>
           <include name="reportTestCreation"/>
-          <include name="loginAndNavigateToWebinars"/>
           <include name="reportCompletion"/>
-          <include name="setupTest"/>
-          <include name="searchWebinarTest"/>
         </methods>
-      </class> <!-- com.edureka.test.DummyTest -->
+      </class> <!-- com.edureka.test.DummyTest2 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
