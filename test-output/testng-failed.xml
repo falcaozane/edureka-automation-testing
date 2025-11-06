@@ -7,8 +7,8 @@
         <methods>
           <include name="careerJobApplicationTest"/>
           <include name="reportGeneration"/>
-          <include name="setupTest"/>
           <include name="reportTestCompletion"/>
+          <include name="setupTest"/>
           <include name="reportTestCreation"/>
           <include name="reportCompletion"/>
         </methods>

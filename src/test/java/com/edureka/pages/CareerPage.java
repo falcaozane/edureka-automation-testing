@@ -6,7 +6,6 @@ import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.File;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
@@ -19,13 +18,17 @@ import org.openqa.selenium.support.PageFactory;
 
 public class CareerPage extends BasePage {
 
-	String filePath = "C:\\Users\\zvijayfa\\eclipse-workspace\\edureka-automation-testing\\src\\test\\resources\\PropertyData\\ZaneResume.pdf";
+	// ========== CONFIGURATION ==========
+	String filePath = "C:\\Users\\falca\\git\\edureka-automation-testing\\src\\test\\resources\\PropertyData\\ZaneResume.pdf";
 	File file = new File(filePath);
 
+	// ========== CONSTRUCTOR ==========
 	public CareerPage(WebDriver driver) {
 		super(driver);
 		PageFactory.initElements(driver, this);
 	}
+
+	// ========== WEB ELEMENTS ==========
 
 	@FindBy(className = "openpostitle")
 	WebElement jobOpenings;
@@ -37,139 +40,142 @@ public class CareerPage extends BasePage {
 			@FindBy(xpath = "//ul[@class='openposslist']/li") })
 	List<WebElement> jobLinks;
 
-	@FindAll({ @FindBy(id = "jobapplicantname"), @FindBy(className = "inputapply"), @FindBy(name = "appname") })
+	@FindAll({ @FindBy(id = "jobapplicantname"), @FindBy(name = "appname"), @FindBy(className = "inputapply") })
 	WebElement nameInput;
 
-	@FindAll({ @FindBy(id = "jobapplicantemail"), @FindBy(className = "inputapply"), @FindBy(name = "appemail") })
+	@FindAll({ @FindBy(id = "jobapplicantemail"), @FindBy(name = "appemail"), @FindBy(className = "inputapply") })
 	WebElement emailInput;
 
-	@FindAll({ @FindBy(id = "jobapplicantmob"), @FindBy(className = "inputapply"), @FindBy(name = "appmobile") })
+	@FindAll({ @FindBy(id = "jobapplicantmob"), @FindBy(name = "appmobile"), @FindBy(className = "inputapply") })
 	WebElement phoneInput;
 
-	@FindAll({ @FindBy(id = "applicsubjob"), @FindBy(className = "appsub"), @FindBy(css = "button.btn-block.appsub") })
+	@FindBys({ @FindBy(className = "fileupload"), @FindBy(xpath = "//input[@type='file']") })
+	WebElement uploadInput;
+
+	@FindAll({ @FindBy(className = "fileupload-new"), @FindBy(css = "input#jobapplicantresume") })
+	WebElement uploadButton;
+
+	@FindAll({ @FindBy(id = "applicsubjob"), @FindBy(css = "button.btn-block.appsub"),
+			@FindBy(xpath = "//button[contains(text(),'Submit')]") })
 	List<WebElement> submitButtons;
+	
+	@FindBy(xpath="//span[text()='BROWSE']") WebElement browseBtn;
 
-//	@FindAll({
-//		
-//		@FindBy(className="fileupload-new"),
-//		@FindBy(xpath = "//input[@id='jobapplicantresume']"),
-//		@FindBy(xpath = "//input[@type='file']")
-//		
-//	}) 
-//	WebElement uploadBtn;
+	// ========== METHODS ==========
 
-	@FindBy(id = "jobapplicantresume")
-	WebElement uploadBtn;
-
-	/**
-	 * Scroll to job openings section
-	 */
+	/** Scroll and wait for job openings section */
 	public void navigateToJobOpenings() {
-		scrollToElement(jobOpenings); // Using BasePage method
-		waitUntilVisible(jobOpenings); // Using BasePage method
+		scrollToElement(jobOpenings);
+		waitUntilVisible(jobOpenings);
+		System.out.println("Navigated to Job Openings section");
 	}
 
-	/**
-	 * Navigate to specific job listing and click
-	 */
+	/** Click on the desired job listing */
 	public void openJobListing() {
 		for (WebElement jobLink : jobLinks) {
 			if (jobLink.getText().equalsIgnoreCase("Associate Research Analyst")) {
-				clickElement(jobLink); // Using BasePage method
+				clickElement(jobLink);
+				System.out.println("Opened Associate Research Analyst job listing");
 				break;
 			}
 		}
 	}
 
-	/**
-	 * Fill job application form
-	 * 
-	 * @param name  - Applicant name
-	 * @param email - Applicant email
-	 * @param phone - Applicant phone number
-	 */
+	/** Switch to child window (job application popup) */
+	public void handleMultipleWindows(WebDriver driver) {
+		String parent = driver.getWindowHandle();
+		Set<String> handles = driver.getWindowHandles();
+		for (String handle : handles) {
+			if (!handle.equals(parent)) {
+				driver.switchTo().window(handle);
+				System.out.println("Switched to child window: " + driver.getTitle());
+				break;
+			}
+		}
+	}
+
+	/** Fill job application form */
 	public void applyForJob(String name, String email, String phone) {
-		explicitWait(10, nameInput); // Using BasePage method
+		explicitWait(10, nameInput);
 		nameInput.sendKeys(name);
 		emailInput.sendKeys(email);
 		phoneInput.sendKeys(phone);
 		System.out.println("Job application form filled successfully");
 	}
 
-	/**
-	 * Switch to child window (job application popup)
-	 * 
-	 * @param driver - WebDriver instance
-	 */
-	public void handleMultipleWindows(WebDriver driver) {
-		Set<String> windowHandles = driver.getWindowHandles();
-		Iterator<String> iterator = windowHandles.iterator();
-		String parentWindow = iterator.next();
-		String childWindow = iterator.next();
-		driver.switchTo().window(childWindow);
-		System.out.println("Switched to child window: " + driver.getTitle());
-	}
-
-	/**
-	 * Alternative method: Try sendKeys first, fallback to Robot class Demonstrates
-	 * multiple approaches (good for SME evaluation)
-	 * 
-	 * @throws AWTException
-	 */
-	public void uploadFileUsingSendKeys() throws AWTException {
-		System.out.println("=== Attempting sendKeys Upload ===");
+	/** Try file upload using sendKeys; fallback to Robot if hidden */
+	public void uploadFile() throws AWTException {
+		System.out.println("=== Attempting Resume Upload ===");
 		System.out.println("File exists: " + file.exists());
 
-		uploadBtn.click();
-		// First try: Direct sendKeys (works if input is not hidden)
-		// explicitWait(10, uploadBtn); // Using BasePage method
-		uploadBtn.sendKeys(filePath);
-		System.out.println("✓ File uploaded successfully using sendKeys");
+		try {
+			scrollToElement(uploadButton); // ensures visibility
+			waitUntilVisible(uploadButton);
+			uploadButton.click();
+			Thread.sleep(2000);
+
+			// Try sendKeys first
+			uploadInput.sendKeys(filePath);
+			System.out.println("File uploaded successfully via sendKeys");
+		} catch (Exception e) {
+			System.out.println("sendKeys failed. Trying Robot class instead...");
+			uploadButton.click();
+			uploadFileUsingRobot(filePath);
+		}
 	}
 
-	/**
-	 * Main method to upload resume and submit application
-	 * 
-	 * @throws AWTException
-	 */
+	/** Robot fallback (for native OS dialogs) */
+	public void uploadFileUsingRobot(String path) throws AWTException {
+	    driver.switchTo().activeElement(); // ensure focus
+	    Robot robot = new Robot();
+	    robot.delay(1000);
+
+	    StringSelection selection = new StringSelection(path);
+	    Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
+
+	    robot.keyPress(KeyEvent.VK_CONTROL);
+	    robot.keyPress(KeyEvent.VK_V);
+	    robot.keyRelease(KeyEvent.VK_V);
+	    robot.keyRelease(KeyEvent.VK_CONTROL);
+	    robot.delay(500);
+
+	    robot.keyPress(KeyEvent.VK_ENTER);
+	    robot.keyRelease(KeyEvent.VK_ENTER);
+	    System.out.println("File uploaded successfully using Robot class");
+	}
+
+
+	/** Upload resume and submit the job application */
 	public void uploadResumeAndSubmit() throws AWTException {
 		System.out.println("\n=== Starting Resume Upload & Submit Process ===");
+		uploadFile();
 
-		// Upload the file 
-		uploadFileUsingSendKeys();
-
-		// Wait for upload to complete
+		// Wait for upload
 		try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
 
-		// Click the submit button
-		System.out.println("Looking for submit button...");
+		// Submit
 		for (WebElement submitButton : submitButtons) {
 			if (submitButton.isDisplayed() && submitButton.isEnabled()) {
-				System.out.println("Submit button found and clickable");
-				explicitWait(5, submitButton); // Using BasePage method
-				// clickElement(submitButton); // Using BasePage method
-				System.out.println("✓ Application submitted successfully!");
-				takeScreenshot("JobApplicationSubmitted"); // Using BasePage method
+				explicitWait(5, submitButton);
+				clickElement(submitButton);
+				System.out.println("Application submitted successfully!");
+				takeScreenshot("JobApplicationSubmitted");
 				break;
 			}
 		}
 	}
 
-	// Get current page URL (using BasePage method)
-	public void printCurrentUrl() {
-		System.out.println("Current URL: " + getCurrentUrl());
+	/** Print URL and Page Title for debug */
+	public void printPageDetails() {
+		System.out.println("🌐 URL: " + getCurrentUrl());
+		System.out.println("📄 Title: " + getPageTitle());
 	}
-
-	// Get current page title (using BasePage method)
-	public void printPageTitle() {
-		System.out.println("Current Page Title: " + getPageTitle());
-	}
-
-	public void clickBrowseBtn() {
-		clickElement(uploadBtn);
+	
+	public void clickBrowse() {
+		browseBtn.click();
 	}
 }
