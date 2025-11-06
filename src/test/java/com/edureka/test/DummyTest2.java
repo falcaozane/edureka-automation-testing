@@ -1,7 +1,9 @@
 package com.edureka.test;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.edureka.pages.*;
@@ -20,29 +22,36 @@ public class DummyTest2 extends ReportManager {
     @BeforeClass
     public void setupTest() {
         driver = BaseSteps.initializeDriver();
+        basePage = new BasePage(driver);
+		basePage.waitForPageLoadComplete();
+    }
+    
+    @BeforeMethod
+    public void initializing() {
+        hp = new HomePage(driver);
+        lp = new LoginPage(driver);
+        cp = new CareerPage(driver);
     }
 
     @Test(dataProvider = "ApplyForJob", dataProviderClass = TestDataProvider.class)
     public void careerJobApplicationTest(String applicantName, String applicantEmail, String applicantPhone) throws Throwable {
 
-        basePage = new BasePage(driver);
-        hp = new HomePage(driver);
+        
         Thread.sleep(3000);
 
         hp.clicklogIn();
-        lp = new LoginPage(driver);
+        
         Thread.sleep(3000);
 
         lp.logIn(); // still using data.properties for login
 
-        cp = new CareerPage(driver);
+        
         System.out.println("Page title is: " + driver.getTitle());
 
         // Scroll until Careers link is visible
-        while (true) {
-            basePage.scrollDownByPixels();
-            Thread.sleep(2000);
-            if (hp.isCareerDisplayed()) break;
+        int attempts = 0;
+        while (attempts++ <10 && !hp.isCareerDisplayed()) {
+            basePage.scrollDownByPixels(800);
         }
 
         hp.clickCareers();
@@ -67,6 +76,10 @@ public class DummyTest2 extends ReportManager {
         Thread.sleep(2000);
 
         System.out.println("Test completed successfully!");
-//        BaseSteps.tearDown();
     }
+    
+    @AfterClass
+	public void shutdown() {
+		BaseSteps.tearDown();
+	}
 }

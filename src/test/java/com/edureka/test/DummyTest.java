@@ -25,6 +25,8 @@ public class DummyTest extends ReportManager {
 		basePage = new BasePage(driver);
 		basePage.waitForPageLoadComplete();
 	}
+	
+	
 
 	@Test(priority = 1)
 	public void loginAndNavigateToWebinars() throws Throwable {
@@ -75,7 +77,7 @@ public class DummyTest extends ReportManager {
 		Thread.sleep(3000);
 		wp.clickGetInTouchCheckbox();
 		basePage.implicitWait(5);
-		//wp.submitWebinarRegistration();
+		wp.submitWebinarRegistration();
 	}
 
 

@@ -5,10 +5,11 @@
     <classes>
       <class name="com.edureka.test.DummyTest2">
         <methods>
-          <include name="careerJobApplicationTest" invocation-numbers="0 1 2 3"/>
+          <include name="initializing"/>
+          <include name="careerJobApplicationTest" invocation-numbers="0"/>
           <include name="reportGeneration"/>
-          <include name="reportTestCompletion"/>
           <include name="setupTest"/>
+          <include name="reportTestCompletion"/>
           <include name="reportTestCreation"/>
           <include name="reportCompletion"/>
         </methods>

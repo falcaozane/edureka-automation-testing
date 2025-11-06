@@ -51,20 +51,22 @@ public class CareerPage extends BasePage {
 	@FindBys({ @FindBy(className = "fileupload"), @FindBy(xpath = "//input[@type='file']") })
 	WebElement uploadInput;
 
-	@FindAll({ @FindBy(className = "fileupload-new"), @FindBy(css = "input#jobapplicantresume") })
-	WebElement uploadButton;
+	@FindAll({
+			@FindBy(xpath="/html/body/section[2]/article/div[2]/div/div/div/div[2]/section[1]/form/div/div/span[2]/input"),
+			@FindBy(className = "fileupload-new"), 
+			@FindBy(css = "input#jobapplicantresume"),
+			@FindBy(id = "jobapplicantresume")
+	}) WebElement uploadButton;
+	
+	@FindBy(id = "jobapplicantresume") public WebElement resumeUploadInput;
 
 	@FindAll({ @FindBy(id = "applicsubjob"), @FindBy(css = "button.btn-block.appsub"),
 			@FindBy(xpath = "//button[contains(text(),'Submit')]") })
 	List<WebElement> submitButtons;
 	
-//	@FindBy(xpath="//span[text()='BROWSE']") WebElement browseBtn;
-
-//@FindBy(css = "span.fileupload-new")
-//    private WebElement browseButton;
 	
 
-@FindBy(id = "jobapplicantresume") public WebElement resumeUploadInput;
+	
 
 
 	// ========== METHODS ==========
@@ -107,6 +109,7 @@ public class CareerPage extends BasePage {
 		emailInput.sendKeys(email);
 		phoneInput.sendKeys(phone);
 		resumeUploadInput.sendKeys(filePath);
+		uploadButton.sendKeys(filePath);
 		System.out.println("Job application form filled successfully");
 	}
 
@@ -116,9 +119,8 @@ public class CareerPage extends BasePage {
 		System.out.println("File exists: " + file.exists());
 
 		try {
-			scrollToElement(uploadButton); // ensures visibility
 			waitUntilVisible(uploadButton);
-			uploadButton.click();
+			uploadButton.sendKeys(filePath);
 			Thread.sleep(2000);
 
 			// Try sendKeys first
@@ -127,14 +129,13 @@ public class CareerPage extends BasePage {
 			System.out.println("File uploaded successfully via sendKeys");
 		} catch (Exception e) {
 			System.out.println("sendKeys failed. Trying Robot class instead...");
-			uploadButton.click();
 			uploadFileUsingRobot(filePath);
 		}
 	}
 
 	/** Robot fallback (for native OS dialogs) */
 	public void uploadFileUsingRobot(String path) throws AWTException {
-	    driver.switchTo().activeElement(); // ensure focus
+	    
 	    Robot robot = new Robot();
 	    robot.delay(1000);
 
@@ -182,11 +183,4 @@ public class CareerPage extends BasePage {
 		System.out.println("Title: " + getPageTitle());
 	}
 	
-//	public void clickBrowse() {
-//		browseButton.click();
-//	}
-	
-//	 public void uploadResume(String filePath) {
-//	        resumeUploadInput.sendKeys(filePath);
-//	    }
 }
