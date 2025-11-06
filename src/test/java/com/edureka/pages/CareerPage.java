@@ -19,13 +19,12 @@ import org.openqa.selenium.support.PageFactory;
 public class CareerPage extends BasePage {
 
 	// ========== CONFIGURATION ==========
-	String filePath = "C:\\Users\\falca\\git\\edureka-automation-testing\\src\\test\\resources\\PropertyData\\ZaneResume.pdf";
+	String filePath = "C:\\Users\\zvijayfa\\eclipse-workspace\\edureka-automation-testing\\src\\test\\resources\\PropertyData\\ZaneResume.pdf";
 	File file = new File(filePath);
 
 	// ========== CONSTRUCTOR ==========
 	public CareerPage(WebDriver driver) {
 		super(driver);
-		PageFactory.initElements(driver, this);
 	}
 
 	// ========== WEB ELEMENTS ==========
@@ -59,7 +58,14 @@ public class CareerPage extends BasePage {
 			@FindBy(xpath = "//button[contains(text(),'Submit')]") })
 	List<WebElement> submitButtons;
 	
-	@FindBy(xpath="//span[text()='BROWSE']") WebElement browseBtn;
+//	@FindBy(xpath="//span[text()='BROWSE']") WebElement browseBtn;
+
+//@FindBy(css = "span.fileupload-new")
+//    private WebElement browseButton;
+	
+
+@FindBy(id = "jobapplicantresume") public WebElement resumeUploadInput;
+
 
 	// ========== METHODS ==========
 
@@ -100,6 +106,7 @@ public class CareerPage extends BasePage {
 		nameInput.sendKeys(name);
 		emailInput.sendKeys(email);
 		phoneInput.sendKeys(phone);
+		resumeUploadInput.sendKeys(filePath);
 		System.out.println("Job application form filled successfully");
 	}
 
@@ -115,7 +122,8 @@ public class CareerPage extends BasePage {
 			Thread.sleep(2000);
 
 			// Try sendKeys first
-			uploadInput.sendKeys(filePath);
+			//uploadInput.sendKeys(filePath);
+			js.executeScript("arguments[0].value='C:\\Users\\zvijayfa\\eclipse-workspace\\edureka-automation-testing\\src\\test\\resources\\PropertyData\\ZaneResume.pdf';", uploadInput);
 			System.out.println("File uploaded successfully via sendKeys");
 		} catch (Exception e) {
 			System.out.println("sendKeys failed. Trying Robot class instead...");
@@ -163,7 +171,6 @@ public class CareerPage extends BasePage {
 				explicitWait(5, submitButton);
 				clickElement(submitButton);
 				System.out.println("Application submitted successfully!");
-				takeScreenshot("JobApplicationSubmitted");
 				break;
 			}
 		}
@@ -171,11 +178,15 @@ public class CareerPage extends BasePage {
 
 	/** Print URL and Page Title for debug */
 	public void printPageDetails() {
-		System.out.println("🌐 URL: " + getCurrentUrl());
-		System.out.println("📄 Title: " + getPageTitle());
+		System.out.println("URL: " + getCurrentUrl());
+		System.out.println("Title: " + getPageTitle());
 	}
 	
-	public void clickBrowse() {
-		browseBtn.click();
-	}
+//	public void clickBrowse() {
+//		browseButton.click();
+//	}
+	
+//	 public void uploadResume(String filePath) {
+//	        resumeUploadInput.sendKeys(filePath);
+//	    }
 }

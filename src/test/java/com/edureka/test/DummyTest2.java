@@ -4,73 +4,69 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.edureka.pages.BasePage;
-import com.edureka.pages.CareerPage;
-import com.edureka.pages.HomePage;
-import com.edureka.pages.LoginPage;
+import com.edureka.pages.*;
 import com.edureka.setup.BaseSteps;
 import com.edureka.utils.ReportManager;
+import com.edureka.dataprovider.TestDataProvider;
 
 public class DummyTest2 extends ReportManager {
 
-	WebDriver driver;
-	BasePage basePage;
-	HomePage hp;
-	LoginPage lp;
-	CareerPage cp;
+    WebDriver driver;
+    BasePage basePage;
+    HomePage hp;
+    LoginPage lp;
+    CareerPage cp;
 
-	@BeforeClass
-	public void setupTest() {
-		driver = BaseSteps.initializeDriver();
-	}
+    @BeforeClass
+    public void setupTest() {
+        driver = BaseSteps.initializeDriver();
+    }
 
-	@Test
-	public void careerJobApplicationTest() throws Throwable {
+    @Test(dataProvider = "ApplyForJob", dataProviderClass = TestDataProvider.class)
+    public void careerJobApplicationTest(String applicantName, String applicantEmail, String applicantPhone) throws Throwable {
 
-		basePage = new BasePage(driver);
-		hp = new HomePage(driver);
-		Thread.sleep(3000);
-		
-		hp.clicklogIn();
-		lp = new LoginPage(driver);
-		Thread.sleep(3000);
-		
-		lp.logIn();
-		cp = new CareerPage(driver);
+        basePage = new BasePage(driver);
+        hp = new HomePage(driver);
+        Thread.sleep(3000);
 
-		System.out.println("Page title is: " + driver.getTitle());
+        hp.clicklogIn();
+        lp = new LoginPage(driver);
+        Thread.sleep(3000);
 
-		// Scroll until Careers link is visible
-		while (true) {
-			BaseSteps.scrollDownByPixels();
-			Thread.sleep(2000);
-			if (hp.isCareerDisplayed()) {
-				break;
-			}
-		}
+        lp.logIn(); // still using data.properties for login
 
-		hp.clickCareers();
-		hp.getPageTitle();
+        cp = new CareerPage(driver);
+        System.out.println("Page title is: " + driver.getTitle());
 
-		// Navigate to job openings section
-		cp.navigateToJobOpenings();
-		cp.openJobListing();
-		cp.getCurrentUrl();
+        // Scroll until Careers link is visible
+        while (true) {
+            basePage.scrollDownByPixels();
+            Thread.sleep(2000);
+            if (hp.isCareerDisplayed()) break;
+        }
 
-		// Switch to job application window
-		cp.handleMultipleWindows(driver);
+        hp.clickCareers();
+        hp.getPageTitle();
 
-		// Fill job application form
-		cp.applyForJob("Zane Falcao", "falcaozane@gmail.com", "9028921961");
-		
-		
-		cp.clickBrowse();
-		Thread.sleep(6000);
-		// Upload resume and submit (using Robot class)
-		cp.uploadResumeAndSubmit();
+        // Navigate to job openings section
+        cp.navigateToJobOpenings();
+        cp.openJobListing();
+        cp.getCurrentUrl();
 
-		System.out.println("Test completed successfully!");
+        // Switch to job application window
+        cp.handleMultipleWindows(driver);
 
-		// BaseSteps.tearDown();
-	}
+        // Fill job application form using DataProvider values
+        cp.applyForJob(applicantName, applicantEmail, applicantPhone);
+
+        Thread.sleep(2000);
+
+        // Upload resume and submit (using Robot class)
+        cp.uploadResumeAndSubmit();
+        
+        Thread.sleep(2000);
+
+        System.out.println("Test completed successfully!");
+//        BaseSteps.tearDown();
+    }
 }

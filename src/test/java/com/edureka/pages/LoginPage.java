@@ -14,8 +14,7 @@ import com.edureka.parameter.PropertyReader;
  * Demonstrates: @FindBy, @FindAll, @FindBys and all 7 locator types
  */
 public class LoginPage extends BasePage {
-    
-    WebDriver driver;
+
     
     // ==========================================
     // EMAIL/USERNAME FIELD - Multiple Locators
@@ -110,7 +109,7 @@ public class LoginPage extends BasePage {
     public LoginPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
-        PageFactory.initElements(driver, this);
+
     }
     
     
@@ -123,7 +122,6 @@ public class LoginPage extends BasePage {
      */
     public void enterEmail(String email) {
         try {
-            waitUntilVisible(emailField);
             emailField.clear();
             emailField.sendKeys(email);
             System.out.println("✓ Email entered: " + email);
@@ -137,7 +135,6 @@ public class LoginPage extends BasePage {
      */
     public void enterPassword(String password) {
         try {
-            waitUntilVisible(passwordField);
             passwordField.clear();
             passwordField.sendKeys(password);
             System.out.println("✓ Password entered");
@@ -151,7 +148,6 @@ public class LoginPage extends BasePage {
      */
     public void clickLoginButton() {
         try {
-            waitUntilClickable(loginButton);
             clickElement(loginButton);
             System.out.println("✓ Login button clicked");
         } catch (Exception e) {
@@ -171,14 +167,7 @@ public class LoginPage extends BasePage {
         clickLoginButton();
     }
     
-    /**
-     * Complete login with custom credentials
-     */
-    public void logIn(String email, String password) {
-        enterEmail(email);
-        enterPassword(password);
-        clickLoginButton();
-    }
+ 
     
     /**
      * Click Sign Up link
@@ -193,35 +182,9 @@ public class LoginPage extends BasePage {
         }
     }
     
-    /**
-     * Click Forgot Password link
-     */
-    public void clickForgotPassword() {
-        try {
-            waitUntilClickable(forgotPasswordLink);
-            clickElement(forgotPasswordLink);
-            System.out.println("✓ Forgot Password link clicked");
-        } catch (Exception e) {
-            System.err.println("✗ Failed to click Forgot Password: " + e.getMessage());
-        }
-    }
+
     
-    /**
-     * Check/uncheck Remember Me checkbox
-     */
-    public void toggleRememberMe(boolean check) {
-        try {
-            if (check && !rememberMeCheckbox.isSelected()) {
-                rememberMeCheckbox.click();
-                System.out.println("✓ Remember Me checked");
-            } else if (!check && rememberMeCheckbox.isSelected()) {
-                rememberMeCheckbox.click();
-                System.out.println("✓ Remember Me unchecked");
-            }
-        } catch (Exception e) {
-            System.err.println("✗ Failed to toggle Remember Me: " + e.getMessage());
-        }
-    }
+    
     
     /**
      * Check if login form is displayed
@@ -332,17 +295,5 @@ public class LoginPage extends BasePage {
         }
     }
     
-    /**
-     * Click Forgot Password using different locator from ObjectReader
-     */
-    public void clickForgotPasswordUsingObjectReader() {
-        try {
-            WebElement forgotLink = driver.findElement(
-                ObjectReader.getByLocator("loginPage.forgotPassword.linkText")
-            );
-            clickElement(forgotLink);
-        } catch (Exception e) {
-            System.err.println("✗ Failed using ObjectReader: " + e.getMessage());
-        }
-    }
+    
 }

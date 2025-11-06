@@ -21,7 +21,7 @@ public class EdurekaJobApplyTest {
     static String name = "Abc";
     static String email = "abc@gmail.com";
     static String mobile = "9999999999";
-    static String filePath = "C:\\Users\\falca\\git\\edureka-automation-testing\\src\\test\\resources\\PropertyData\\ZaneResume.pdf";
+    static String filePath = "C:\\Users\\zvijayfa\\eclipse-workspace\\edureka-automation-testing\\src\\test\\resources\\PropertyData\\ZaneResume.pdf";
 
     // ========== PAGE OBJECT MODEL (POM) ==========
     public static class JobApplyPage {
@@ -115,11 +115,11 @@ public class EdurekaJobApplyTest {
 
             // Fill form details
             page.fillForm(name, email, mobile);
-            System.out.println("✅ Form fields filled successfully.");
+            System.out.println("Form fields filled successfully.");
 
             // Upload resume
             page.uploadResume(filePath);
-            System.out.println("✅ Resume uploaded successfully.");
+            System.out.println("Resume uploaded successfully.");
 
             // Wait for preview
             page.waitForPreview();
@@ -131,8 +131,8 @@ public class EdurekaJobApplyTest {
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            System.out.println("🔚 Test completed. Closing browser...");
-            driver.quit();
+            System.out.println("Test completed. Closing browser...");
+            //driver.quit();
         }
     }
 }

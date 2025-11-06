@@ -8,9 +8,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
 
-public class WebinarPage {
-	WebDriver driver;
+public class WebinarPage extends BasePage{
 	
 	//WebElements
 	@FindAll({
@@ -79,7 +79,7 @@ public class WebinarPage {
 	//Constructor
 	public WebinarPage(WebDriver driver) {
 		// TODO Auto-generated constructor stub
-		this.driver = driver;
+		super(driver);
 		PageFactory.initElements(driver, this);
 	}
 	
@@ -94,7 +94,9 @@ public class WebinarPage {
 	            input.sendKeys(webinarName);
 	            break;
 	        }
+	        explicitWait(10, input);
 	    }
+	    
 	}
 	
 	// clear webinar search input
@@ -106,6 +108,7 @@ public class WebinarPage {
 	            input.clear();
 	            break;
 	        }
+	        explicitWait(5, input);
 	    }
 	}
 	
@@ -135,7 +138,7 @@ public class WebinarPage {
 	}
 	
 	// register for webinar
-	public void registerForWebinar() {
+	public void searchWebinarCarousel() {
 	    for (Object element : registerButtons) {
 	        WebElement button = (WebElement) element;
 	        String classAttr = button.getAttribute("class");
@@ -149,17 +152,22 @@ public class WebinarPage {
 	    }
 	}
 	
-	// select experience from dropdown
+	// select exp
 	public void selectExperience(String experienceLevel) {
-	    for (Object element : experienceDropdowns) {
-	        WebElement dropdown = (WebElement) element;
-	        String nameAttr = dropdown.getAttribute("name");
-	        if (nameAttr != null && nameAttr.equals("Experience")) {
-	            dropdown.sendKeys(experienceLevel);
-	            break;
+	    for (WebElement dropdown : experienceDropdowns) {
+	        if (dropdown.isDisplayed() && dropdown.isEnabled()) {
+	            try {
+	                Select select = new Select(dropdown);
+	                select.selectByVisibleText(experienceLevel);
+	                System.out.println("Selected experience: " + experienceLevel);
+	                break;
+	            } catch (Exception e) {
+	                System.out.println("Dropdown interaction failed: " + e.getMessage());
+	            }
 	        }
 	    }
 	}
+
 	
 	// click get in touch checkbox
 	public void clickGetInTouchCheckbox() {
@@ -184,6 +192,7 @@ public class WebinarPage {
 	            button.click();
 	            break;
 	        }
+	        implicitWait(5);
 	    }
 	}
 	

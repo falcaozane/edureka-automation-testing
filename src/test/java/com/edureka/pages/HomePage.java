@@ -17,8 +17,6 @@ import com.edureka.parameter.ObjectReader;
  * Demonstrates: @FindBy, @FindAll, and all 7 locator types
  */
 public class HomePage extends BasePage {
-    
-    WebDriver driver;
     private final Actions actions;
     
     // ==========================================
@@ -99,7 +97,6 @@ public class HomePage extends BasePage {
         super(driver);
         this.driver = driver;
         this.actions = new Actions(driver);
-        PageFactory.initElements(driver, this);
     }
     
     

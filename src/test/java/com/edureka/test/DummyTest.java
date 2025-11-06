@@ -1,6 +1,7 @@
 package com.edureka.test;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import com.edureka.pages.*;
@@ -10,46 +11,76 @@ import com.edureka.dataprovider.TestDataProvider;
 
 public class DummyTest extends ReportManager {
 
-    WebDriver driver;
-    BasePage basePage;
-    HomePage hp;
-    LoginPage lp;
-    WebinarPage wp;
+	WebDriver driver;
+	BasePage basePage;
+	HomePage hp;
+	LoginPage lp;
+	WebinarPage wp;
+	
+	
 
-    @BeforeClass
-    public void setupTest() {
-        driver = BaseSteps.initializeDriver();
-    }
+	@BeforeClass
+	public void setupTest() {
+		driver = BaseSteps.initializeDriver();
+		basePage = new BasePage(driver);
+		basePage.waitForPageLoadComplete();
+	}
 
-    @Test
-    public void loginAndNavigateToWebinars() throws Throwable {
-        basePage = new BasePage(driver);
-        hp = new HomePage(driver);
-        Thread.sleep(3000);
-        hp.clicklogIn();
+	@Test(priority = 1)
+	public void loginAndNavigateToWebinars() throws Throwable {
 
-        lp = new LoginPage(driver);
-        Thread.sleep(3000);
-        lp.logIn(); // still using data.properties
+		hp = new HomePage(driver);
+		basePage.implicitWait(5);
+		hp.clicklogIn();
 
-        wp = new WebinarPage(driver);
-        System.out.println("Page title is: " + driver.getTitle());
+		lp = new LoginPage(driver);
+		basePage.implicitWait(5);
+		lp.logIn(); // still using data.properties
 
-        while (true) {
-            BaseSteps.scrollDownByPixels();
-            Thread.sleep(2000);
-            if (hp.isWebinarDisplayed()) break;
-        }
+		wp = new WebinarPage(driver);
+		System.out.println("Page title is: " + driver.getTitle());
 
-        hp.clickWebinars();
-        System.out.println("Page title is: " + driver.getTitle());
-    }
+		// Scroll until webinar section/card is visible (bounded)
+		int attempts = 0;
+		while (attempts++ < 10 && !hp.isWebinarDisplayed()) {
+			basePage.scrollDownByPixels(800);
+		}
 
-    @Test(dataProvider = "webinarSearchTerms", dataProviderClass = TestDataProvider.class, dependsOnMethods = "loginAndNavigateToWebinars")
-    public void searchWebinarTest(String searchTerm) throws InterruptedException {
-        wp.searchWebinar(searchTerm);
-        Thread.sleep(3000);
-        wp.clearWebinarSearch();
-        Thread.sleep(1000);
-    }
+		hp.clickWebinars();
+		System.out.println("Page title is: " + driver.getTitle());
+	}
+
+	@Test(priority = 2, dataProvider = "webinarSearchTerms", dataProviderClass = TestDataProvider.class, dependsOnMethods = "loginAndNavigateToWebinars")
+	public void searchWebinarTest(String searchTerm) throws InterruptedException {
+		wp = new WebinarPage(driver);
+		wp.searchWebinar(searchTerm);
+		Thread.sleep(3000);
+		wp.clearWebinarSearch();	
+	}
+	
+	@Test(priority = 3, dependsOnMethods = "loginAndNavigateToWebinars")
+	public void registerForWebinar() throws InterruptedException{
+		
+		basePage.scrollDownByPixels(500);
+
+		while (wp.isRightArrowVisible()) {
+		    wp.clickRightArrow();
+		    basePage.implicitWait(5);
+		}
+
+		basePage.implicitWait(3);
+		wp.searchWebinarCarousel();
+		Thread.sleep(3000);
+		wp.selectExperience("Student");
+		Thread.sleep(3000);
+		wp.clickGetInTouchCheckbox();
+		basePage.implicitWait(5);
+		//wp.submitWebinarRegistration();
+	}
+
+
+	@AfterClass
+	public void shutdown() {
+		BaseSteps.tearDown();
+	}
 }
