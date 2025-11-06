@@ -19,7 +19,8 @@ import org.openqa.selenium.support.PageFactory;
 public class CareerPage extends BasePage {
 
 	// ========== CONFIGURATION ==========
-	String filePath = "C:\\Users\\zvijayfa\\eclipse-workspace\\edureka-automation-testing\\src\\test\\resources\\PropertyData\\ZaneResume.pdf";
+//	String filePath = "C:\\Users\\zvijayfa\\eclipse-workspace\\edureka-automation-testing\\src\\test\\resources\\PropertyData\\ZaneResume.pdf";
+	String filePath = "C:\\Users\\falca\\git\\edureka-automation-testing\\src\\test\\resources\\PropertyData\\ZaneResume.pdf";
 	File file = new File(filePath);
 
 	// ========== CONSTRUCTOR ==========
@@ -48,7 +49,7 @@ public class CareerPage extends BasePage {
 	@FindAll({ @FindBy(id = "jobapplicantmob"), @FindBy(name = "appmobile"), @FindBy(className = "inputapply") })
 	WebElement phoneInput;
 
-	@FindBys({ @FindBy(className = "fileupload"), @FindBy(xpath = "//input[@type='file']") })
+	@FindBys({ @FindBy(id = "jobapplicantresume"), @FindBy(xpath = "//input[@type='file']") })
 	WebElement uploadInput;
 
 	@FindAll({

@@ -1,13 +1,13 @@
 package com.edureka.pages;
 
 import java.time.Duration;
-
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import com.edureka.utils.ScreenShotTest;
 
 public class BasePage {
     protected WebDriver driver;
@@ -17,7 +17,7 @@ public class BasePage {
     public BasePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10)); // bumped to 10s for stability
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         this.js = (JavascriptExecutor) driver;
     }
 
@@ -28,7 +28,6 @@ public class BasePage {
     public void waitUntilVisible(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
-    
 
     public WebElement waitUntilClickable(WebElement element) {
         return wait.until(ExpectedConditions.elementToBeClickable(element));
@@ -95,4 +94,25 @@ public class BasePage {
     public String getPageTitle() {
         return driver.getTitle();
     }
+
+    // ==================== SCREENSHOT METHODS ====================
+
+    
+    public String takeScreenshot(String screenshotName) {
+        return ScreenShotTest.captureScreenshot(driver, screenshotName);
+    }
+
+
+
+    /**
+     * Captures a screenshot of a specific WebElement
+     * @param element WebElement to capture
+     * @param elementName Name to identify the element
+     * @return String path of the captured screenshot
+     */
+    public String takeElementScreenshot(WebElement element, String elementName) {
+        return ScreenShotTest.captureElementScreenshot(element, elementName);
+    }
+
+    
 }
