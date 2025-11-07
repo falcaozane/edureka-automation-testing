@@ -122,6 +122,8 @@ public class CareerPage extends BasePage {
 
 		phoneInput.sendKeys(phone);
 		System.out.println("✓ Phone entered: " + phone);
+		
+		removeFocusFromPhoneField();
 	}
 
 	/**
@@ -138,6 +140,9 @@ public class CareerPage extends BasePage {
 		System.out.println("File exists: " + file.exists());
 
 		try {
+			
+			removeFocusFromPhoneField();
+			
 			// Wait for the upload input
 			explicitWait(10, resumeUploadInput);
 
@@ -231,6 +236,30 @@ public class CareerPage extends BasePage {
 		} catch (Exception e) {
 			System.err.println("✗ Upload failed: " + e.getMessage());
 			e.printStackTrace();
+		}
+	}
+	
+	
+	/**
+	 * Remove focus from phone field to prevent file path being entered there
+	 */
+	private void removeFocusFromPhoneField() {
+		try {
+			// Method 1: Click on a neutral element (like the form itself or page body)
+			js.executeScript("document.body.click();");
+			System.out.println("✓ Focus removed from phone field (body click)");
+			Thread.sleep(500);
+		} catch (Exception e) {
+			System.out.println("Could not remove focus using body click: " + e.getMessage());
+			
+			// Method 2: Use blur() JavaScript
+			try {
+				js.executeScript("arguments[0].blur();", phoneInput);
+				System.out.println("✓ Focus removed using blur()");
+				Thread.sleep(500);
+			} catch (Exception blurException) {
+				System.out.println("Could not blur phone field: " + blurException.getMessage());
+			}
 		}
 	}
 
