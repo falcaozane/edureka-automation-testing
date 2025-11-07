@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-11-07T00:07:36 IST" name="Default suite" finished-at="2025-11-07T00:10:02 IST" duration-ms="145389">
+  <suite started-at="2025-11-07T06:12:54 IST" name="Default suite" finished-at="2025-11-07T06:15:24 IST" duration-ms="150054">
     <groups>
     </groups>
-    <test started-at="2025-11-07T00:07:36 IST" name="Default test" finished-at="2025-11-07T00:10:02 IST" duration-ms="145389">
+    <test started-at="2025-11-07T06:12:54 IST" name="Default test" finished-at="2025-11-07T06:15:24 IST" duration-ms="150054">
       <class name="com.edureka.test.EdurekaCompleteTest">
-        <test-method is-config="true" signature="reportGeneration()[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:07:36 IST" name="reportGeneration" finished-at="2025-11-07T00:07:36 IST" duration-ms="204" status="PASS">
+        <test-method is-config="true" signature="reportGeneration()[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:12:53 IST" name="reportGeneration" finished-at="2025-11-07T06:12:54 IST" duration-ms="208" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportGeneration -->
-        <test-method is-config="true" signature="setupTest()[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:07:36 IST" name="setupTest" finished-at="2025-11-07T00:07:39 IST" duration-ms="2788" status="PASS">
+        <test-method is-config="true" signature="setupTest()[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:12:54 IST" name="setupTest" finished-at="2025-11-07T06:12:57 IST" duration-ms="3477" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupTest -->
-        <test-method is-config="true" signature="reportTestCreation(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:07:39 IST" name="reportTestCreation" finished-at="2025-11-07T00:07:39 IST" duration-ms="27" status="PASS">
+        <test-method is-config="true" signature="reportTestCreation(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:12:57 IST" name="reportTestCreation" finished-at="2025-11-07T06:12:57 IST" duration-ms="49" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -24,18 +24,18 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@77cddc0c]]>
+                <![CDATA[org.testng.TestRunner@7c4d1c7b]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportTestCreation -->
-        <test-method signature="loginTest()[pri:1, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:07:39 IST" name="loginTest" description="User Login Test" finished-at="2025-11-07T00:07:50 IST" duration-ms="11273" status="PASS">
+        <test-method signature="loginTest()[pri:1, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:12:57 IST" name="loginTest" description="User Login Test" finished-at="2025-11-07T06:13:08 IST" duration-ms="11317" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="reportTestCompletion(org.testng.ITestResult)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:07:50 IST" name="reportTestCompletion" finished-at="2025-11-07T00:07:50 IST" duration-ms="175" status="PASS">
+        <test-method is-config="true" signature="reportTestCompletion(org.testng.ITestResult)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:13:08 IST" name="reportTestCompletion" finished-at="2025-11-07T06:13:09 IST" duration-ms="158" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -46,7 +46,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportTestCompletion -->
-        <test-method is-config="true" signature="reportTestCreation(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:07:50 IST" name="reportTestCreation" finished-at="2025-11-07T00:07:50 IST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="reportTestCreation(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:13:09 IST" name="reportTestCreation" finished-at="2025-11-07T06:13:09 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -55,18 +55,18 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@77cddc0c]]>
+                <![CDATA[org.testng.TestRunner@7c4d1c7b]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportTestCreation -->
-        <test-method signature="navigateToWebinarsTest()[pri:2, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:07:50 IST" name="navigateToWebinarsTest" description="Navigate to Webinars Section" finished-at="2025-11-07T00:07:56 IST" depends-on-methods="com.edureka.test.EdurekaCompleteTest.loginTest" duration-ms="5088" status="PASS">
+        <test-method signature="navigateToWebinarsTest()[pri:2, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:13:09 IST" name="navigateToWebinarsTest" description="Navigate to Webinars Section" finished-at="2025-11-07T06:13:14 IST" depends-on-methods="com.edureka.test.EdurekaCompleteTest.loginTest" duration-ms="5472" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateToWebinarsTest -->
-        <test-method is-config="true" signature="reportTestCompletion(org.testng.ITestResult)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:07:56 IST" name="reportTestCompletion" finished-at="2025-11-07T00:07:56 IST" duration-ms="214" status="PASS">
+        <test-method is-config="true" signature="reportTestCompletion(org.testng.ITestResult)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:13:14 IST" name="reportTestCompletion" finished-at="2025-11-07T06:13:14 IST" duration-ms="206" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -77,7 +77,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportTestCompletion -->
-        <test-method is-config="true" signature="reportTestCreation(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:07:57 IST" name="reportTestCreation" finished-at="2025-11-07T00:07:57 IST" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="reportTestCreation(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:13:16 IST" name="reportTestCreation" finished-at="2025-11-07T06:13:16 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -86,14 +86,14 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@77cddc0c]]>
+                <![CDATA[org.testng.TestRunner@7c4d1c7b]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportTestCreation -->
-        <test-method signature="searchWebinarTest(java.lang.String)[pri:3, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:07:57 IST" name="searchWebinarTest" description="Search Webinars with Multiple Keywords" data-provider="webinarSearchTerms" finished-at="2025-11-07T00:08:05 IST" depends-on-methods="com.edureka.test.EdurekaCompleteTest.navigateToWebinarsTest" duration-ms="7644" status="PASS">
+        <test-method signature="searchWebinarTest(java.lang.String)[pri:3, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:13:16 IST" name="searchWebinarTest" description="Search Webinars with Multiple Keywords" data-provider="webinarSearchTerms" finished-at="2025-11-07T06:13:23 IST" depends-on-methods="com.edureka.test.EdurekaCompleteTest.navigateToWebinarsTest" duration-ms="6934" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -104,7 +104,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchWebinarTest -->
-        <test-method is-config="true" signature="reportTestCompletion(org.testng.ITestResult)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:08:05 IST" name="reportTestCompletion" finished-at="2025-11-07T00:08:05 IST" duration-ms="190" status="PASS">
+        <test-method is-config="true" signature="reportTestCompletion(org.testng.ITestResult)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:13:23 IST" name="reportTestCompletion" finished-at="2025-11-07T06:13:23 IST" duration-ms="165" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -115,7 +115,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportTestCompletion -->
-        <test-method is-config="true" signature="reportTestCreation(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:08:05 IST" name="reportTestCreation" finished-at="2025-11-07T00:08:05 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="reportTestCreation(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:13:23 IST" name="reportTestCreation" finished-at="2025-11-07T06:13:23 IST" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -124,14 +124,14 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@77cddc0c]]>
+                <![CDATA[org.testng.TestRunner@7c4d1c7b]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportTestCreation -->
-        <test-method signature="searchWebinarTest(java.lang.String)[pri:3, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:08:05 IST" name="searchWebinarTest" description="Search Webinars with Multiple Keywords" data-provider="webinarSearchTerms" finished-at="2025-11-07T00:08:10 IST" depends-on-methods="com.edureka.test.EdurekaCompleteTest.navigateToWebinarsTest" duration-ms="4771" status="PASS">
+        <test-method signature="searchWebinarTest(java.lang.String)[pri:3, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:13:23 IST" name="searchWebinarTest" description="Search Webinars with Multiple Keywords" data-provider="webinarSearchTerms" finished-at="2025-11-07T06:13:28 IST" depends-on-methods="com.edureka.test.EdurekaCompleteTest.navigateToWebinarsTest" duration-ms="4680" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -142,7 +142,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchWebinarTest -->
-        <test-method is-config="true" signature="reportTestCompletion(org.testng.ITestResult)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:08:10 IST" name="reportTestCompletion" finished-at="2025-11-07T00:08:10 IST" duration-ms="233" status="PASS">
+        <test-method is-config="true" signature="reportTestCompletion(org.testng.ITestResult)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:13:28 IST" name="reportTestCompletion" finished-at="2025-11-07T06:13:28 IST" duration-ms="194" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -153,7 +153,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportTestCompletion -->
-        <test-method is-config="true" signature="reportTestCreation(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:08:10 IST" name="reportTestCreation" finished-at="2025-11-07T00:08:10 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="reportTestCreation(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:13:28 IST" name="reportTestCreation" finished-at="2025-11-07T06:13:28 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -162,14 +162,14 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@77cddc0c]]>
+                <![CDATA[org.testng.TestRunner@7c4d1c7b]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportTestCreation -->
-        <test-method signature="searchWebinarTest(java.lang.String)[pri:3, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:08:10 IST" name="searchWebinarTest" description="Search Webinars with Multiple Keywords" data-provider="webinarSearchTerms" finished-at="2025-11-07T00:08:15 IST" depends-on-methods="com.edureka.test.EdurekaCompleteTest.navigateToWebinarsTest" duration-ms="4689" status="PASS">
+        <test-method signature="searchWebinarTest(java.lang.String)[pri:3, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:13:28 IST" name="searchWebinarTest" description="Search Webinars with Multiple Keywords" data-provider="webinarSearchTerms" finished-at="2025-11-07T06:13:33 IST" depends-on-methods="com.edureka.test.EdurekaCompleteTest.navigateToWebinarsTest" duration-ms="4591" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -180,7 +180,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchWebinarTest -->
-        <test-method is-config="true" signature="reportTestCompletion(org.testng.ITestResult)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:08:15 IST" name="reportTestCompletion" finished-at="2025-11-07T00:08:15 IST" duration-ms="205" status="PASS">
+        <test-method is-config="true" signature="reportTestCompletion(org.testng.ITestResult)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:13:33 IST" name="reportTestCompletion" finished-at="2025-11-07T06:13:33 IST" duration-ms="201" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -191,7 +191,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportTestCompletion -->
-        <test-method is-config="true" signature="reportTestCreation(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:08:15 IST" name="reportTestCreation" finished-at="2025-11-07T00:08:15 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="reportTestCreation(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:13:33 IST" name="reportTestCreation" finished-at="2025-11-07T06:13:33 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -200,14 +200,14 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@77cddc0c]]>
+                <![CDATA[org.testng.TestRunner@7c4d1c7b]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportTestCreation -->
-        <test-method signature="searchWebinarTest(java.lang.String)[pri:3, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:08:15 IST" name="searchWebinarTest" description="Search Webinars with Multiple Keywords" data-provider="webinarSearchTerms" finished-at="2025-11-07T00:08:20 IST" depends-on-methods="com.edureka.test.EdurekaCompleteTest.navigateToWebinarsTest" duration-ms="4619" status="PASS">
+        <test-method signature="searchWebinarTest(java.lang.String)[pri:3, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:13:33 IST" name="searchWebinarTest" description="Search Webinars with Multiple Keywords" data-provider="webinarSearchTerms" finished-at="2025-11-07T06:13:37 IST" depends-on-methods="com.edureka.test.EdurekaCompleteTest.navigateToWebinarsTest" duration-ms="4718" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -218,7 +218,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchWebinarTest -->
-        <test-method is-config="true" signature="reportTestCompletion(org.testng.ITestResult)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:08:20 IST" name="reportTestCompletion" finished-at="2025-11-07T00:08:20 IST" duration-ms="246" status="PASS">
+        <test-method is-config="true" signature="reportTestCompletion(org.testng.ITestResult)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:13:37 IST" name="reportTestCompletion" finished-at="2025-11-07T06:13:38 IST" duration-ms="192" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -229,7 +229,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportTestCompletion -->
-        <test-method is-config="true" signature="reportTestCreation(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:08:20 IST" name="reportTestCreation" finished-at="2025-11-07T00:08:20 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="reportTestCreation(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:13:38 IST" name="reportTestCreation" finished-at="2025-11-07T06:13:38 IST" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -238,14 +238,14 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@77cddc0c]]>
+                <![CDATA[org.testng.TestRunner@7c4d1c7b]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportTestCreation -->
-        <test-method signature="searchWebinarTest(java.lang.String)[pri:3, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:08:20 IST" name="searchWebinarTest" description="Search Webinars with Multiple Keywords" data-provider="webinarSearchTerms" finished-at="2025-11-07T00:08:25 IST" depends-on-methods="com.edureka.test.EdurekaCompleteTest.navigateToWebinarsTest" duration-ms="4648" status="PASS">
+        <test-method signature="searchWebinarTest(java.lang.String)[pri:3, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:13:38 IST" name="searchWebinarTest" description="Search Webinars with Multiple Keywords" data-provider="webinarSearchTerms" finished-at="2025-11-07T06:13:42 IST" depends-on-methods="com.edureka.test.EdurekaCompleteTest.navigateToWebinarsTest" duration-ms="4634" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -256,7 +256,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- searchWebinarTest -->
-        <test-method is-config="true" signature="reportTestCompletion(org.testng.ITestResult)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:08:25 IST" name="reportTestCompletion" finished-at="2025-11-07T00:08:25 IST" duration-ms="186" status="PASS">
+        <test-method is-config="true" signature="reportTestCompletion(org.testng.ITestResult)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:13:42 IST" name="reportTestCompletion" finished-at="2025-11-07T06:13:43 IST" duration-ms="199" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -267,7 +267,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportTestCompletion -->
-        <test-method is-config="true" signature="reportTestCreation(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:08:25 IST" name="reportTestCreation" finished-at="2025-11-07T00:08:25 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="reportTestCreation(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:13:43 IST" name="reportTestCreation" finished-at="2025-11-07T06:13:43 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -276,18 +276,18 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@77cddc0c]]>
+                <![CDATA[org.testng.TestRunner@7c4d1c7b]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportTestCreation -->
-        <test-method signature="registerForWebinarTest()[pri:4, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:08:25 IST" name="registerForWebinarTest" description="Register for Webinar" finished-at="2025-11-07T00:08:39 IST" depends-on-methods="com.edureka.test.EdurekaCompleteTest.searchWebinarTest" duration-ms="14327" status="PASS">
+        <test-method signature="registerForWebinarTest()[pri:4, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:13:43 IST" name="registerForWebinarTest" description="Register for Webinar" finished-at="2025-11-07T06:13:57 IST" depends-on-methods="com.edureka.test.EdurekaCompleteTest.searchWebinarTest" duration-ms="14180" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- registerForWebinarTest -->
-        <test-method is-config="true" signature="reportTestCompletion(org.testng.ITestResult)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:08:39 IST" name="reportTestCompletion" finished-at="2025-11-07T00:08:39 IST" duration-ms="123" status="PASS">
+        <test-method is-config="true" signature="reportTestCompletion(org.testng.ITestResult)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:13:57 IST" name="reportTestCompletion" finished-at="2025-11-07T06:13:57 IST" duration-ms="134" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -298,7 +298,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportTestCompletion -->
-        <test-method is-config="true" signature="reportTestCreation(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:08:39 IST" name="reportTestCreation" finished-at="2025-11-07T00:08:39 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="reportTestCreation(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:13:57 IST" name="reportTestCreation" finished-at="2025-11-07T06:13:57 IST" duration-ms="2" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -307,18 +307,18 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@77cddc0c]]>
+                <![CDATA[org.testng.TestRunner@7c4d1c7b]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportTestCreation -->
-        <test-method signature="navigateToCareersTest()[pri:5, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:08:39 IST" name="navigateToCareersTest" description="Navigate to Careers Page" finished-at="2025-11-07T00:09:14 IST" depends-on-methods="com.edureka.test.EdurekaCompleteTest.registerForWebinarTest" duration-ms="34594" status="PASS">
+        <test-method signature="navigateToCareersTest()[pri:5, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:13:57 IST" name="navigateToCareersTest" description="Navigate to Careers Page" finished-at="2025-11-07T06:14:31 IST" depends-on-methods="com.edureka.test.EdurekaCompleteTest.registerForWebinarTest" duration-ms="34637" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateToCareersTest -->
-        <test-method is-config="true" signature="reportTestCompletion(org.testng.ITestResult)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:09:14 IST" name="reportTestCompletion" finished-at="2025-11-07T00:09:14 IST" duration-ms="231" status="PASS">
+        <test-method is-config="true" signature="reportTestCompletion(org.testng.ITestResult)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:14:31 IST" name="reportTestCompletion" finished-at="2025-11-07T06:14:32 IST" duration-ms="258" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -329,7 +329,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportTestCompletion -->
-        <test-method is-config="true" signature="reportTestCreation(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:09:14 IST" name="reportTestCreation" finished-at="2025-11-07T00:09:14 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="reportTestCreation(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:14:32 IST" name="reportTestCreation" finished-at="2025-11-07T06:14:32 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -338,18 +338,18 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@77cddc0c]]>
+                <![CDATA[org.testng.TestRunner@7c4d1c7b]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportTestCreation -->
-        <test-method signature="navigateToJobOpeningTest()[pri:6, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:09:14 IST" name="navigateToJobOpeningTest" description="Navigate to Job Opening" finished-at="2025-11-07T00:09:23 IST" depends-on-methods="com.edureka.test.EdurekaCompleteTest.navigateToCareersTest" duration-ms="9229" status="PASS">
+        <test-method signature="navigateToJobOpeningTest()[pri:6, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:14:32 IST" name="navigateToJobOpeningTest" description="Navigate to Job Opening" finished-at="2025-11-07T06:14:41 IST" depends-on-methods="com.edureka.test.EdurekaCompleteTest.navigateToCareersTest" duration-ms="9232" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- navigateToJobOpeningTest -->
-        <test-method is-config="true" signature="reportTestCompletion(org.testng.ITestResult)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:09:23 IST" name="reportTestCompletion" finished-at="2025-11-07T00:09:23 IST" duration-ms="117" status="PASS">
+        <test-method is-config="true" signature="reportTestCompletion(org.testng.ITestResult)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:14:41 IST" name="reportTestCompletion" finished-at="2025-11-07T06:14:41 IST" duration-ms="124" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -360,7 +360,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportTestCompletion -->
-        <test-method is-config="true" signature="reportTestCreation(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:09:24 IST" name="reportTestCreation" finished-at="2025-11-07T00:09:24 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="reportTestCreation(java.lang.reflect.Method,org.testng.ITestContext)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:14:41 IST" name="reportTestCreation" finished-at="2025-11-07T06:14:41 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -369,14 +369,14 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[org.testng.TestRunner@77cddc0c]]>
+                <![CDATA[org.testng.TestRunner@7c4d1c7b]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportTestCreation -->
-        <test-method signature="applyForJobTest(java.lang.String,java.lang.String,java.lang.String)[pri:7, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:09:24 IST" name="applyForJobTest" description="Apply for Job with Test Data" data-provider="ApplyForJob" finished-at="2025-11-07T00:10:01 IST" depends-on-methods="com.edureka.test.EdurekaCompleteTest.navigateToJobOpeningTest" duration-ms="37500" status="PASS">
+        <test-method signature="applyForJobTest(java.lang.String,java.lang.String,java.lang.String)[pri:7, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:14:41 IST" name="applyForJobTest" description="Apply for Job with Test Data" data-provider="ApplyForJob" finished-at="2025-11-07T06:15:23 IST" depends-on-methods="com.edureka.test.EdurekaCompleteTest.navigateToJobOpeningTest" duration-ms="41798" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -397,7 +397,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- applyForJobTest -->
-        <test-method is-config="true" signature="reportTestCompletion(org.testng.ITestResult)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:10:01 IST" name="reportTestCompletion" finished-at="2025-11-07T00:10:01 IST" duration-ms="174" status="PASS">
+        <test-method is-config="true" signature="reportTestCompletion(org.testng.ITestResult)[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:15:23 IST" name="reportTestCompletion" finished-at="2025-11-07T06:15:23 IST" duration-ms="239" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -408,11 +408,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportTestCompletion -->
-        <test-method is-config="true" signature="shutdown()[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:10:01 IST" name="shutdown" finished-at="2025-11-07T00:10:02 IST" duration-ms="338" status="PASS">
+        <test-method is-config="true" signature="shutdown()[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:15:23 IST" name="shutdown" finished-at="2025-11-07T06:15:24 IST" duration-ms="330" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shutdown -->
-        <test-method is-config="true" signature="reportCompletion()[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T00:10:02 IST" name="reportCompletion" finished-at="2025-11-07T00:10:02 IST" duration-ms="292" status="PASS">
+        <test-method is-config="true" signature="reportCompletion()[pri:0, instance:com.edureka.test.EdurekaCompleteTest@1bd4fdd]" started-at="2025-11-07T06:15:24 IST" name="reportCompletion" finished-at="2025-11-07T06:15:24 IST" duration-ms="322" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- reportCompletion -->
